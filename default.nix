@@ -10,6 +10,6 @@ pkgs.rustPlatform.buildRustPackage {
 
   postInstall = ''
     mv $out/lib $out/lua
-	mv $out/lua/libvity_nvim.so $out/lua/vity.so
+	mv $out/lua/libvity.so $out/lua/vity.so
   '';
 }
