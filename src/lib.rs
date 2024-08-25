@@ -33,26 +33,25 @@ fn api() -> nvim_oxi::Result<Dictionary> {
 
     let w = Rc::clone(&win);
 
-    let open_window: Function<(), Result<(), api::Error>> =
-        Function::from_fn(move |()| {
-            if w.borrow().is_some() {
-                api::err_writeln("Window is already open");
-                return Ok(());
-            }
+    let open_window: Function<(), Result<(), api::Error>> = Function::from_fn(move |()| {
+        if w.borrow().is_some() {
+            api::err_writeln("Window is already open");
+            return Ok(());
+        }
 
-            let config = WindowConfig::builder()
-                .relative(WindowRelativeTo::Cursor)
-                .height(5)
-                .width(10)
-                .row(1)
-                .col(0)
-                .build();
+        let config = WindowConfig::builder()
+            .relative(WindowRelativeTo::Cursor)
+            .height(5)
+            .width(10)
+            .row(1)
+            .col(0)
+            .build();
 
-            let mut win = w.borrow_mut();
-            *win = Some(api::open_win(&buf, false, &config)?);
+        let mut win = w.borrow_mut();
+        *win = Some(api::open_win(&buf, false, &config)?);
 
-            Ok(())
-        });
+        Ok(())
+    });
 
     let close_window = Function::from_fn(move |()| {
         if win.borrow().is_none() {
@@ -64,10 +63,7 @@ fn api() -> nvim_oxi::Result<Dictionary> {
         win.close(false)
     });
 
-    let api = Dictionary::from_iter([
-        ("open_window", open_window),
-        ("close_window", close_window),
-    ]);
+    let api = Dictionary::from_iter([("open_window", open_window), ("close_window", close_window)]);
 
     Ok(api)
 }
