@@ -5,7 +5,7 @@ pkgs.rustPlatform.buildRustPackage {
 
   src = pkgs.lib.cleanSource ./.;
 
-  cargoSha256 = "0";
+  cargoSha256 = pkgs.lib.fakeSha256;
   cargoLock.lockFile = ./Cargo.lock;
 
   postInstall = ''
