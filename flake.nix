@@ -21,6 +21,10 @@
           inherit system overlays;
         };
       in {
+        # build
+        packages.default = pkgs.callPackage ./default.nix {inherit pkgs;};
+
+        # dev shell
         devShells.default = with pkgs;
           mkShell {
             buildInputs = [

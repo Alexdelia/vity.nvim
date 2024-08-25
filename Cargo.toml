@@ -3,5 +3,8 @@ name = "vity-nvim"
 version = "0.1.0"
 edition = "2021"
 
+[lib]
+crate-type = ["cdylib"]
+
 [dependencies]
-nvim-oxi = "0.5.1"
+nvim-oxi = { version = "0.5.1", features = ["neovim-0-9"] }
