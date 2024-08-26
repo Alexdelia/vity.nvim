@@ -8,9 +8,10 @@
 <!-- badges -->
 <p align="center">
 	<a href="https://github.com/Alexdelia/vity.nvim">
-		<img
-            alt="github hits"
-            src="https://img.shields.io/endpoint?color=d5397b&logo=github&style=for-the-badge&url=https%3A%2F%2Fhits.dwyl.com%2FAlexdelia%2Fvitynvim.json">
+		<img align="center"
+			alt="github hits"
+			src="https://img.shields.io/endpoint?color=d5397b&logo=github&style=for-the-badge&url=https%3A%2F%2Fhits.dwyl.com%2FAlexdelia%2Fvitynvim.json"
+		/>
 	</a>
 	<a href="https://builtwithnix.org">
 		<img align="center" 
