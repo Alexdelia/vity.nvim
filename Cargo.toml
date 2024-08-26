@@ -1,0 +1,11 @@
+[package]
+name = "vity-nvim"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "vity"
+crate-type = ["cdylib"]
+
+[dependencies]
+nvim-oxi = { version = "0.5.1", features = ["neovim-0-9"] }
