@@ -22,7 +22,7 @@
 
 <!-- description -->
 <h2 align="center">
-	<span style="color: #007ACC">vscode</span>
+	<span style="color: #4B953F">neovim</span>
 	<b style="color: #E34A87">color theme</b>
 	<small>focused on</small>
 	<i style="color: #4BB543">visibility</i>
