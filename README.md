@@ -9,12 +9,21 @@
 <p align="center">
 	<a href="https://github.com/Alexdelia/vity.nvim">
 		<img align="center"
+			height="32vw"
 			alt="github hits"
 			src="https://img.shields.io/endpoint?color=d5397b&logo=github&style=for-the-badge&url=https%3A%2F%2Fhits.dwyl.com%2FAlexdelia%2Fvitynvim.json"
 		/>
 	</a>
+	<a href="https://rustacean.net/">
+		<img align="center"
+			height="38vw"
+			alt="rust ferris"
+			src="https://rustacean.net/favicon.png"
+		/>
+	</a>
 	<a href="https://builtwithnix.org">
-		<img align="center" 
+		<img align="center"
+			height="34vw"
 			alt="built with nix"
 			src="https://builtwithnix.org/badge.svg"
 		/>
