@@ -19,3 +19,19 @@
 		/>
 	</a>
 </p>
+
+<!-- description -->
+<h2 align="center">
+	<span style="color: #007ACC">vscode</span>
+	<b style="color: #E34A87">color theme</b>
+	<small>focused on</small>
+	<i style="color: #4BB543">visibility</i>
+	<small>and</small>
+	<i style="color: #4BB543">readability</i>
+</h2>
+
+<br>
+
+# Install
+
+_very soon_
