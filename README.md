@@ -32,12 +32,12 @@
 
 <!-- description -->
 <h2 align="center">
-	<span style="color: #4B953F">neovim</span>
-	<b style="color: #E34A87">color theme</b>
+	<span style="color: #57A143">neovim</span>
+	<b style="color: #E34A87">colorscheme</b>
 	<small>focused on</small>
-	<i style="color: #4BB543">visibility</i>
+	<i style="color: #19a1e6">visibility</i>
 	<small>and</small>
-	<i style="color: #4BB543">readability</i>
+	<i style="color: #19a1e6">readability</i>
 </h2>
 
 <br>
