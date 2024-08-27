@@ -77,7 +77,7 @@
 
 ### manually with `cargo`
 
-```nu
+```nushell
 # compile the plugin in a `.so` file
 cargo build --release
 
