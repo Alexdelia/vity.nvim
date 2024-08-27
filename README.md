@@ -83,7 +83,6 @@ cargo build --release
 
 # place the `.so` file in the `lua` directory to be detected as a plugin by `neovim`
 mkdir -p ~/.config/nvim/lua
-
 mv target/release/libvity.so ~/.config/nvim/lua/vity.so
 
 # *optional* make `:colorscheme vity` work by adding an entry in the `colors` directory
@@ -104,6 +103,6 @@ echo "require('vity').load()" > ~/.config/nvim/colors/vity.lua
 ```lua
 -- init.lua
 require('vity').load()
-require('vity').setup() -- alias of `load()`
-require('vity').colorscheme() -- alias of `load()`
+require('vity').setup()		-- alias of `load()`
+require('vity').colorscheme()	-- alias of `load()`
 ```
