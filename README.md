@@ -103,6 +103,6 @@ echo "require('vity').load()" > ~/.config/nvim/colors/vity.lua
 ```lua
 -- init.lua
 require('vity').load()
-require('vity').setup() -- alias of `load()`
-require('vity').colorscheme() -- alias of `load()`
+require('vity').setup()		-- alias of `load()`
+require('vity').colorscheme()	-- alias of `load()`
 ```
