@@ -15,11 +15,6 @@ fn vity() -> nvim_oxi::Result<Dictionary> {
 			&SetHighlightOpts::builder().foreground("#ff0000").build(),
 		)?;
 
-		api::notify(
-			"vity loaded",
-			api::types::LogLevel::Info,
-			&NotifyOpts::default(),
-		)?; // debug purpose
 		Ok(())
 	});
 
