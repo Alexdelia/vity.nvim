@@ -42,6 +42,68 @@
 
 <br>
 
-# Install
+## Install
 
-_very soon_
+### with `nix`
+
+```nix
+# flake.nix
+{
+  inputs = {
+    vity.url = "github:Alexdelia/vity.nvim";
+  };
+}
+```
+
+```nix
+# home.nix
+{
+  inputs,
+  pkgs,
+  ...
+}: {
+  programs.neovim = {
+    plugins = [
+      (pkgs.vimUtils.buildVimPlugin {
+        name = "vity";
+        src = inputs.vity.packages.${pkgs.system}.default
+
+        config = "colorscheme vity";
+      })
+    ];
+  };
+}
+```
+
+### manually with `cargo`
+
+```nu
+# compile the plugin in a `.so` file
+cargo build --release
+
+# place the `.so` file in the `lua` directory to be detected as a plugin by `neovim`
+mkdir -p ~/.config/nvim/lua
+
+mv target/release/libvity.so ~/.config/nvim/lua/vity.so
+
+# *optional* make `:colorscheme vity` work by adding an entry in the `colors` directory
+mkdir $out/colors
+echo "require('vity').load()" > ~/.config/nvim/colors/vity.lua
+```
+
+## Usage
+
+### in the `neovim` command line
+
+```vim
+:colorscheme vity
+```
+
+### in the `init.lua` file
+
+```lua
+-- init.lua
+require('vity').load()
+require('vity').setup() -- alias of `load()`
+require('vity').colorscheme() -- alias of `load()`
+```
