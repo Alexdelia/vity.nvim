@@ -7,7 +7,7 @@
 ///
 /// # Returns
 /// * a hex color string (e.g. "#ff0000").
-pub fn hsl(h: u16, s: u16, l: u16) -> String {
+pub fn hsl(h: u16, s: u8, l: u8) -> String {
 	let (r, g, b) = hsl_to_rgb(h as Float / 360.0, s as Float / 100.0, l as Float / 100.0);
 
 	format!("#{:02x}{:02x}{:02x}", r, g, b)
