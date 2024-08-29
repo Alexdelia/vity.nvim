@@ -23,5 +23,15 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	api::set_hl(
+		0,
+		"Todo",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(42, 100, 30))
+			.italic(false)
+			.bold(true)
+			.build(),
+	)?;
+
 	Ok(())
 }
