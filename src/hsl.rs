@@ -1,6 +1,21 @@
-use crate::Float;
+/// Generates a hex color string from HSL values.
+///
+/// # Arguments
+/// * `h` - Hue (0..=360)
+/// * `s` - Saturation (0..=100)
+/// * `l` - Lightness (0..=100)
+///
+/// # Returns
+/// * a hex color string (e.g. "#ff0000").
+pub fn hsl(h: u16, s: u16, l: u16) -> String {
+	let (r, g, b) = hsl_to_rgb(h as Float / 360.0, s as Float / 100.0, l as Float / 100.0);
 
-/// Converts HSL to RGB.
+	format!("#{:02x}{:02x}{:02x}", r, g, b)
+}
+
+type Float = f64;
+
+/// converts HSL to RGB.
 ///
 /// # Arguments
 /// * `h` - Hue (0.0..=1.0)
@@ -8,8 +23,8 @@ use crate::Float;
 /// * `l` - Lightness (0.0..=1.0)
 ///
 /// # Returns
-/// * A tuple containing the RGB values as u8 (0..=255).
-pub fn hsl_to_rgb(h: Float, s: Float, l: Float) -> (u8, u8, u8) {
+/// * a tuple containing the RGB values as u8 (0..=255).
+fn hsl_to_rgb(h: Float, s: Float, l: Float) -> (u8, u8, u8) {
 	let q = if l < 0.5 {
 		l * (1.0 + s)
 	} else {
@@ -51,6 +66,18 @@ fn hue_to_rgb(p: Float, q: Float, t: Float) -> Float {
 #[cfg(test)]
 mod tests {
 	use super::*;
+
+	#[test]
+	fn test_hsl() {
+		assert_eq!(hsl(0, 0, 0), "#000000");
+		assert_eq!(hsl(0, 0, 100), "#ffffff");
+		assert_eq!(hsl(0, 100, 50), "#ff0000");
+		assert_eq!(hsl(120, 100, 50), "#00ff00");
+		assert_eq!(hsl(240, 100, 50), "#0000ff");
+		assert_eq!(hsl(360, 100, 50), "#ff0000");
+		assert_eq!(hsl(42, 69, 82), "#f1deb1");
+		assert_eq!(hsl(348, 100, 86), "#ffb8c6");
+	}
 
 	#[test]
 	fn test_hsl_to_rgb() {

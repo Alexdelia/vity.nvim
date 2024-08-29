@@ -1,7 +1,4 @@
-use const_format::formatcp as __formatcp;
-
-#[cfg(test)]
-mod test_proc_macro;
+mod hsl;
 
 use nvim_oxi::{
 	api::{self, opts::SetHighlightOpts},
@@ -14,10 +11,10 @@ fn vity() -> nvim_oxi::Result<Dictionary> {
 		api::set_hl(
 			0,
 			"Comment",
-			&SetHighlightOpts::builder().foreground("#ff0000").build(),
+			&SetHighlightOpts::builder()
+				.foreground(&hsl::hsl(0, 100, 50))
+				.build(),
 		)?;
-
-		// println!("{}", rgb!(255, 0, 0));
 
 		Ok(())
 	});
