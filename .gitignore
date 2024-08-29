@@ -1,5 +1,5 @@
 # dev cargo build output
-/target
+target/
 
 # dev nix build output
 result

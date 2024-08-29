@@ -9,3 +9,5 @@ crate-type = ["cdylib"]
 
 [dependencies]
 nvim-oxi = { version = "0.5.1", features = ["neovim-0-9"] }
+hsl = { path = "src/hsl" }
+const_format = "0.2.32"
