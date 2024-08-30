@@ -26,13 +26,13 @@ pub fn load() -> Result<(), api::Error> {
 	api::set_hl(0, "RustOctNumber", &oct)?;
 
 	let hex = SetHighlightOpts::builder()
-		.foreground(&hsl(hue + 30, 100, lum + 7))
+		.foreground(&hsl(hue + 30, sat, lum + 7))
 		.build();
 	api::set_hl(0, "RustHexNumber", &hex)?;
 	api::set_hl(0, "DevIconHexadecimal", &hex)?;
 
 	let float = SetHighlightOpts::builder()
-		.foreground(&hsl(hue - 10, 100, lum))
+		.foreground(&hsl(hue - 10, sat, lum))
 		.build();
 	api::set_hl(0, "Float", &float)?;
 	api::set_hl(0, "NvimFloat", &float)?;
