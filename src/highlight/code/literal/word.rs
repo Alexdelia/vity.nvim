@@ -11,7 +11,12 @@ pub fn load() -> Result<(), api::Error> {
 			.italic(true)
 			.build(),
 	)?;
-	// TODO: null
+
+	let null = SetHighlightOpts::builder()
+		.foreground(&hsl(293, 77, 52))
+		.build();
+	api::set_hl(0, "JavaScriptNull", &null)?;
+	api::set_hl(0, "yamlNull", &null)?;
 
 	Ok(())
 }
