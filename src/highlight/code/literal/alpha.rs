@@ -23,6 +23,11 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(hue_char, sat, lum))
 			.build(),
 	)?;
+	api::set_hl(
+		0,
+		"Character",
+		&SetHighlightOpts::builder().link("Char").build(),
+	)?;
 
 	let lum_quote = lum - 20;
 	api::set_hl(

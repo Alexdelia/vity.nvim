@@ -7,7 +7,8 @@ pub fn load() -> Result<(), api::Error> {
 	let i: i32 = -42;
 	let u: u32 = 42;
 	let f: f64 = 42.0;
-	let s: String = "Boolean".to_string();
+	let x: usize = 0x42;
+	let s: &str = "str";
 	let c: char = 'B';
 
 	Ok(())
