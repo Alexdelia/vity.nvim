@@ -9,6 +9,7 @@ pub fn load() -> Result<(), api::Error> {
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(207, 61, 59))
 			.italic(false)
+			.nocombine(true)
 			.build(),
 	)?;
 
@@ -18,6 +19,7 @@ pub fn load() -> Result<(), api::Error> {
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(140, 73, 59))
 			.italic(false)
+			.nocombine(true)
 			.build(),
 	)?;
 
@@ -27,6 +29,7 @@ pub fn load() -> Result<(), api::Error> {
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(151, 76, 52))
 			.italic(false)
+			.nocombine(true)
 			.build(),
 	)?;
 	api::set_hl(
