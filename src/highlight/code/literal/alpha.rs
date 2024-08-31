@@ -1,26 +1,28 @@
-use crate::hsl;
+use crate::{hsl, Hsl};
 
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
 pub fn load() -> Result<(), api::Error> {
-	let hue = 95;
-	let sat = 48;
-	let lum = 55;
+	let base = Hsl {
+		h: 95,
+		s: 48,
+		l: 55,
+	};
 
 	api::set_hl(
 		0,
 		"String",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(hue, sat, lum))
+			.foreground(&base.to_rgb())
 			.build(),
 	)?;
 
-	let hue_char = hue - 30;
+	let hue_char = base.h - 30;
 	api::set_hl(
 		0,
 		"Char",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(hue_char, sat, lum))
+			.foreground(&hsl(hue_char, base.s, base.l))
 			.build(),
 	)?;
 	api::set_hl(
@@ -29,12 +31,12 @@ pub fn load() -> Result<(), api::Error> {
 		&SetHighlightOpts::builder().link("Char").build(),
 	)?;
 
-	let lum_quote = lum - 20;
+	let lum_quote = base.l - 20;
 	api::set_hl(
 		0,
 		"NvimStringQuote",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(hue, sat, lum_quote))
+			.foreground(&hsl(base.h, base.s, lum_quote))
 			.build(),
 	)?;
 	api::set_hl(
@@ -47,7 +49,7 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"NvimSingleQuote",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(hue_char, sat, lum_quote))
+			.foreground(&hsl(hue_char, base.s, lum_quote))
 			.build(),
 	)?;
 

@@ -1,7 +1,8 @@
+mod color;
 mod highlight;
 mod hsl;
 
-use hsl::hsl;
+use hsl::{convert::hsl, Hsl};
 
 use nvim_oxi::{api, Dictionary, Function};
 

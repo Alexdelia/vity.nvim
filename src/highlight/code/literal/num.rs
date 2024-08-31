@@ -1,32 +1,34 @@
-use crate::hsl;
+use crate::{hsl, Hsl};
 
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
 pub fn load() -> Result<(), api::Error> {
-	let hue = 184;
-	let sat = 100;
-	let lum = 74;
+	let base = Hsl {
+		h: 184,
+		s: 100,
+		l: 74,
+	};
 
 	api::set_hl(
 		0,
 		"Number",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(hue, sat, lum))
+			.foreground(&base.to_rgb())
 			.build(),
 	)?;
 
 	let bin = SetHighlightOpts::builder()
-		.foreground(&hsl(hue, sat, lum + 6))
+		.foreground(&hsl(base.h, base.s, base.l + 6))
 		.build();
 	api::set_hl(0, "RustBinNumber", &bin)?;
 
 	let oct = SetHighlightOpts::builder()
-		.foreground(&hsl(hue, sat, lum - 6))
+		.foreground(&hsl(base.h, base.s, base.l - 6))
 		.build();
 	api::set_hl(0, "RustOctNumber", &oct)?;
 
 	let hex = SetHighlightOpts::builder()
-		.foreground(&hsl(hue + 30, sat, lum + 7))
+		.foreground(&hsl(base.h + 30, base.s, base.l + 7))
 		.build();
 	api::set_hl(0, "RustHexNumber", &hex)?;
 	api::set_hl(0, "DevIconHexadecimal", &hex)?;
@@ -35,7 +37,7 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"Float",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(hue - 10, sat, lum))
+			.foreground(&hsl(base.h - 10, base.s, base.l))
 			.build(),
 	)?;
 	api::set_hl(

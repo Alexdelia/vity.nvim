@@ -8,6 +8,7 @@ pub fn load() -> Result<(), api::Error> {
 		"Boolean",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(227, 63, 66))
+			.italic(true)
 			.build(),
 	)?;
 
