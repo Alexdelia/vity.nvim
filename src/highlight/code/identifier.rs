@@ -25,15 +25,42 @@ pub fn load() -> Result<(), api::Error> {
 		&SetHighlightOpts::builder().link("@variable").build(),
 	)?;
 
+	function()?;
+
+	Ok(())
+}
+
+fn function() -> Result<(), api::Error> {
+	let hue = 336;
+	let sat = 73;
+	let lum = 59;
+
 	api::set_hl(
 		0,
 		"Function",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(336, 73, 59))
+			.foreground(&hsl(hue, sat, lum))
 			.italic(false)
 			.bold(true)
 			.nocombine(true)
 			.build(),
+	)?;
+
+	api::set_hl(
+		0,
+		"Macro",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(hue - 13, sat, lum))
+			.italic(false)
+			.bold(true)
+			.nocombine(true)
+			.build(),
+	)?;
+
+	api::set_hl(
+		0,
+		"@function.builtin",
+		&SetHighlightOpts::builder().link("Macro").build(),
 	)?;
 
 	Ok(())

@@ -13,11 +13,15 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	let hue = 140;
+	let sat = 73;
+	let lum = 59;
+
 	api::set_hl(
 		0,
 		"Structure",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(140, 73, 59))
+			.foreground(&hsl(hue, sat, lum))
 			.italic(false)
 			.nocombine(true)
 			.build(),
@@ -27,7 +31,7 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"@type.builtin",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(151, 76, 52))
+			.foreground(&hsl(hue + 10, sat + 5, lum - 7))
 			.italic(false)
 			.nocombine(true)
 			.build(),
@@ -36,6 +40,16 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"@lsp.type.builtinType",
 		&SetHighlightOpts::builder().link("@type.builtin").build(),
+	)?;
+
+	api::set_hl(
+		0,
+		"@lsp.type.typeAlias",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(hue + 20, sat, lum))
+			.blend(2 / 3)
+			.nocombine(true)
+			.build(),
 	)?;
 
 	Ok(())

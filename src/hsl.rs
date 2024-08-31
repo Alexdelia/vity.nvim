@@ -1,3 +1,5 @@
+type Float = f64;
+
 /// Generates a hex color string from HSL values.
 ///
 /// # Arguments
@@ -12,8 +14,6 @@ pub fn hsl(h: u16, s: u8, l: u8) -> String {
 
 	format!("#{:02x}{:02x}{:02x}", r, g, b)
 }
-
-type Float = f64;
 
 /// converts HSL to RGB.
 ///
