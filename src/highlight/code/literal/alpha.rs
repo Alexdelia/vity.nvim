@@ -15,20 +15,34 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	let hue_char = hue - 30;
 	api::set_hl(
 		0,
 		"Char",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(hue - 30, sat, lum))
+			.foreground(&hsl(hue_char, sat, lum))
 			.build(),
 	)?;
 
-	// TODO: darker quote
+	let lum_quote = lum - 20;
 	api::set_hl(
 		0,
 		"NvimStringQuote",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(hue - 30, sat, lum))
+			.foreground(&hsl(hue, sat, lum_quote))
+			.build(),
+	)?;
+	api::set_hl(
+		0,
+		"NvimDoubleQuote",
+		&SetHighlightOpts::builder().link("NvimStringQuote").build(),
+	)?;
+
+	api::set_hl(
+		0,
+		"NvimSingleQuote",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(hue_char, sat, lum_quote))
 			.build(),
 	)?;
 
