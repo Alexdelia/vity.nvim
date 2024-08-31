@@ -14,7 +14,7 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"Pmenu",
 		&SetHighlightOpts::builder()
-			.background(&hsl(BACKGROUND.h, BACKGROUND.s, BACKGROUND.l - 4).to_rgb())
+			.background(&hsl(BACKGROUND.h, BACKGROUND.s, BACKGROUND.l - 4))
 			.build(),
 	)?;
 
