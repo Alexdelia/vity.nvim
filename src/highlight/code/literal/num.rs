@@ -31,11 +31,23 @@ pub fn load() -> Result<(), api::Error> {
 	api::set_hl(0, "RustHexNumber", &hex)?;
 	api::set_hl(0, "DevIconHexadecimal", &hex)?;
 
-	let float = SetHighlightOpts::builder()
-		.foreground(&hsl(hue - 10, sat, lum))
-		.build();
-	api::set_hl(0, "Float", &float)?;
-	api::set_hl(0, "NvimFloat", &float)?;
+	api::set_hl(
+		0,
+		"Float",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(hue - 10, sat, lum))
+			.build(),
+	)?;
+	api::set_hl(
+		0,
+		"NvimFloat",
+		&SetHighlightOpts::builder().link("Float").build(),
+	)?;
+	api::set_hl(
+		0,
+		"@number.float",
+		&SetHighlightOpts::builder().link("Float").build(),
+	)?;
 
 	Ok(())
 }
