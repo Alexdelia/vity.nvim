@@ -8,6 +8,7 @@ pub fn load() -> Result<(), api::Error> {
 		"Type",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(207, 61, 59))
+			.italic(false)
 			.build(),
 	)?;
 
@@ -16,6 +17,7 @@ pub fn load() -> Result<(), api::Error> {
 		"Structure",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(140, 73, 59))
+			.italic(false)
 			.build(),
 	)?;
 
@@ -24,6 +26,7 @@ pub fn load() -> Result<(), api::Error> {
 		"@type.builtin",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(151, 76, 52))
+			.italic(false)
 			.build(),
 	)?;
 	api::set_hl(

@@ -17,6 +17,8 @@ pub fn load() -> Result<(), api::Error> {
 		"Function",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(336, 73, 59))
+			.italic(false)
+			.bold(true)
 			.build(),
 	)?;
 
