@@ -3,13 +3,34 @@ use crate::hsl;
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
 pub fn load() -> Result<(), api::Error> {
-	let b: bool = true;
-	let i: i32 = -42;
-	let u: u32 = 42;
-	let f: f64 = 42.0;
-	let x: usize = 0x42;
-	let s: &str = "str";
-	let c: char = 'B';
+	api::set_hl(
+		0,
+		"Type",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(207, 61, 59))
+			.build(),
+	)?;
+
+	api::set_hl(
+		0,
+		"Structure",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(140, 73, 59))
+			.build(),
+	)?;
+
+	api::set_hl(
+		0,
+		"@type.builtin",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(151, 76, 52))
+			.build(),
+	)?;
+	api::set_hl(
+		0,
+		"@lsp.type.builtinType",
+		&SetHighlightOpts::builder().link("@type.builtin").build(),
+	)?;
 
 	Ok(())
 }
