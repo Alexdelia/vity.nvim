@@ -3,7 +3,6 @@ use crate::hsl;
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
 pub fn load() -> Result<(), api::Error> {
-	/*
 	api::set_hl(
 		0,
 		"Identifier",
@@ -12,7 +11,6 @@ pub fn load() -> Result<(), api::Error> {
 			.italic(true)
 			.build(),
 	)?;
-	*/
 	api::set_hl(
 		0,
 		"@variable",
@@ -34,6 +32,7 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(336, 73, 59))
 			.italic(false)
 			.bold(true)
+			.nocombine(true)
 			.build(),
 	)?;
 
