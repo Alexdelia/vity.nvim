@@ -11,7 +11,7 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"BufferLineFill",
 		&SetHighlightOpts::builder()
-			.foreground(&BACKGROUND_D1.to_rgb())
+			.background(&BACKGROUND_D1.to_rgb())
 			.build(),
 	)?;
 	// inactive buffer
@@ -19,7 +19,7 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"BufferLineBackground",
 		&SetHighlightOpts::builder()
-			.foreground(&BACKGROUND_D1.to_rgb())
+			.background(&BACKGROUND_D1.to_rgb())
 			.build(),
 	)?;
 	// active buffer
@@ -27,7 +27,7 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"BufferLineBufferVisible",
 		&SetHighlightOpts::builder()
-			.foreground(&BACKGROUND.to_rgb())
+			.background(&BACKGROUND.to_rgb())
 			.build(),
 	)?;
 
