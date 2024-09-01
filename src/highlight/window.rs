@@ -1,6 +1,9 @@
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
-use crate::{color::BACKGROUND, hsl};
+use crate::{
+	color::{BACKGROUND, BACKGROUND_D1},
+	hsl,
+};
 
 pub fn load() -> Result<(), api::Error> {
 	api::set_hl(
@@ -14,7 +17,7 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"Pmenu",
 		&SetHighlightOpts::builder()
-			.background(&hsl(BACKGROUND.h, BACKGROUND.s, BACKGROUND.l - 4))
+			.background(&BACKGROUND_D1.to_rgb())
 			.build(),
 	)?;
 
