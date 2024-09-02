@@ -30,6 +30,16 @@ pub fn load() -> Result<(), api::Error> {
 			.background(&BACKGROUND.to_rgb())
 			.build(),
 	)?;
+	// selected buffer
+	api::set_hl(
+		0,
+		"BufferLineBufferSelected",
+		&SetHighlightOpts::builder()
+			.background(&BACKGROUND.to_rgb())
+			.italic(false)
+			.bold(false)
+			.build(),
+	)?;
 
 	Ok(())
 }
