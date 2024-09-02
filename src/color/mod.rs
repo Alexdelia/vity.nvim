@@ -1,4 +1,4 @@
-use crate::{hsl::Hue, Hsl};
+use crate::Hsl;
 
 pub const BACKGROUND: Hsl = Hsl { h: 0, s: 0, l: 12 };
 pub const BACKGROUND_D1: Hsl = Hsl { h: 0, s: 0, l: 10 };
@@ -28,6 +28,11 @@ pub const SUCCESS: Hsl = Hsl {
 };
 pub const INFO: Hsl = Hsl {
 	h: 205,
+	s: 65,
+	l: 50,
+};
+pub const HELP: Hsl = Hsl {
+	h: 180,
 	s: 65,
 	l: 50,
 };
