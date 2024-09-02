@@ -60,6 +60,7 @@ pub fn load() -> Result<(), api::Error> {
 		(f!("{PRE}{K_WARN}"), &warning),
 		(f!("{PRE}{K_INFO}"), &info),
 		(f!("{PRE}{K_HELP}"), &help),
+		(f!("{PRE}{NUM}"), &gray),
 	] {
 		api::set_hl(
 			0,
@@ -72,11 +73,20 @@ pub fn load() -> Result<(), api::Error> {
 				.build(),
 		)?;
 	}
-	/*
-	for (group, link) in &[] {
-		api::set_hl(0, group, &SetHighlightOpts::builder().link(link).build())?;
-	}
-	*/
+	api::set_hl(
+		0,
+		f!("{PRE}{PICK}"),
+		&SetHighlightOpts::builder()
+			.background(&bg.1)
+			.foreground(&success)
+			.bold(true)
+			.italic(false)
+			.build(),
+	)?;
+	// for (group, link) in &[
+	// ] {
+	// api::set_hl(0, group, &SetHighlightOpts::builder().link(link).build())?;
+	// }
 
 	// elevation 2
 	for (group, fg) in &[
