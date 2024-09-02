@@ -14,6 +14,8 @@ const WARN: &str = "Warning";
 const INFO: &str = "Info";
 const HINT: &str = "Hint";
 
+const DIAG: &str = "Diagnostic";
+
 const SEL: &str = "Selected";
 
 pub fn load() -> Result<(), api::Error> {
@@ -101,6 +103,12 @@ pub fn load() -> Result<(), api::Error> {
         (f!("{PRE}Tab"), f!("{PRE}BufferBackground")),
         (f!("{PRE}Tab{SEL}"), f!("{PRE}Buffer{SEL}")),
         (f!("{PRE}Duplicate{SEL}"), f!("{PRE}{HINT}{SEL}")),
+        (f!("{PRE}{DIAG}{SEL}"), f!("Normal")),
+        (f!("{PRE}{ERR}{DIAG}{SEL}"), f!("{PRE}{ERR}{SEL}")),
+        (f!("{PRE}{WARN}{DIAG}{SEL}"), f!("{PRE}{WARN}{SEL}")),
+        (f!("{PRE}{INFO}{DIAG}{SEL}"), f!("{PRE}{INFO}{SEL}")),
+        (f!("{PRE}{HINT}{DIAG}{SEL}"), f!("{PRE}{HINT}{SEL}")),
+        (f!("{PRE}CloseButton{SEL}"), f!("{PRE}{HINT}{SEL}")),
 	] {
 		api::set_hl(0, group, &SetHighlightOpts::builder().link(link).build())?;
 	}
