@@ -1,4 +1,4 @@
-type Float = f64;
+use crate::hsl::{Float, Hue, Lum, Sat};
 
 /// Generates a hex color string from HSL values.
 ///
@@ -9,7 +9,7 @@ type Float = f64;
 ///
 /// # Returns
 /// * a hex color string (e.g. "#ff0000").
-pub fn hsl(h: u16, s: u8, l: u8) -> String {
+pub fn hsl(h: Hue, s: Sat, l: Lum) -> String {
 	let (r, g, b) = hsl_to_rgb(h as Float / 360.0, s as Float / 100.0, l as Float / 100.0);
 
 	format!("#{:02x}{:02x}{:02x}", r, g, b)
@@ -24,7 +24,7 @@ pub fn hsl(h: u16, s: u8, l: u8) -> String {
 ///
 /// # Returns
 /// * a tuple containing the RGB values as u8 (0..=255).
-fn hsl_to_rgb(h: Float, s: Float, l: Float) -> (u8, u8, u8) {
+pub fn hsl_to_rgb(h: Float, s: Float, l: Float) -> (u8, u8, u8) {
 	let q = if l < 0.5 {
 		l * (1.0 + s)
 	} else {
