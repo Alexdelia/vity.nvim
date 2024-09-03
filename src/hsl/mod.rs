@@ -7,8 +7,7 @@ type Hue = u16;
 type Sat = u8;
 type Lum = u8;
 
-#[cfg(test)]
-#[derive(Debug, PartialEq)]
+#[cfg_attr(test, derive(Debug, PartialEq))]
 pub struct Hsl {
 	pub h: Hue,
 	pub s: Sat,
