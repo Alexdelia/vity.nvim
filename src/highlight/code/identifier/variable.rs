@@ -12,16 +12,23 @@ pub fn load() -> Result<(), api::Error> {
 			.nocombine(true)
 			.build(),
 	)?;
+	let follow = SetHighlightOpts::builder().link("@variable").build();
+	api::set_hl(0, "@lsp.type.variable", &follow)?;
+	api::set_hl(0, "@lsp.type.property", &follow)?;
+
 	api::set_hl(
 		0,
-		"@lsp.type.variable",
-		&SetHighlightOpts::builder().link("@variable").build(),
+		"@constant",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(230, 60, 55))
+			.italic(true)
+			.nocombine(true)
+			.build(),
 	)?;
-	api::set_hl(
-		0,
-		"@lsp.type.property",
-		&SetHighlightOpts::builder().link("@variable").build(),
-	)?;
+	let follow = SetHighlightOpts::builder().link("@constant").build();
+	api::sel_hl(0, "@lsp.type.const", &follow)?;
+	api::set_hl(0, "@lsp.mod.constant", &follow)?;
+	api::set_hl(0, "@lsp.typemod.const", &follow)?;
 
 	Ok(())
 }
