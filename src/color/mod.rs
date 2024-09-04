@@ -36,3 +36,5 @@ pub const HELP: Hsl = Hsl {
 	s: 65,
 	l: 50,
 };
+
+// 280°, 16%, 32% dark normal fg

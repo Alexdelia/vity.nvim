@@ -25,6 +25,7 @@ const CLOSE_BTN: &str = "CloseButton";
 const TAB: &str = "Tab";
 const DUP: &str = "Duplicate";
 const MODI: &str = "Modified";
+const MRK: &str = "TrunkMarker";
 
 const SEL: &str = "Selected";
 const VIS: &str = "Visible";
@@ -37,7 +38,7 @@ pub fn load() -> Result<(), api::Error> {
 		BACKGROUND.to_rgb(),    // selected buffer background
 	);
 	let fg_unselected = (Hsl { h: 0, s: 0, l: 25 }).to_rgb();
-	let fg_selected = PRIMARY.blend(&BACKGROUND, 0.7).to_rgb();
+	let fg_selected = PRIMARY.blend(&BACKGROUND, 0.5).to_rgb();
 
 	let error = ERROR.to_rgb();
 	let warning = WARNING.to_rgb();
@@ -154,8 +155,16 @@ pub fn load() -> Result<(), api::Error> {
 		}
 	}
 
+    api::sel_hl(0,
+        f!("{PRE}{MRK}"),
+        &SetHighlightOpts::builder()
+            .link(MRK)
+            .build(),
+    )?;
+
 	// unsupported because I don't use them
 	for (group, link) in &[
+        (f!("{PRE}{BUF}", f!("{PRE}{BUF}{SEL}")),
 		(f!("{PRE}{TAB}"), f!("{PRE}{BUF}Background")),
 		(f!("{PRE}{TAB}{SEL}"), f!("{PRE}{BUF}{SEL}")),
 		(f!("{PRE}{DUP}{SEL}"), f!("{PRE}{BUF}{VIS}")),
