@@ -155,7 +155,7 @@ pub fn load() -> Result<(), api::Error> {
 		}
 	}
 
-	api::sel_hl(
+	api::set_hl(
 		0,
 		f!("{PRE}{MRK}"),
 		&SetHighlightOpts::builder().link(MRK).build(),

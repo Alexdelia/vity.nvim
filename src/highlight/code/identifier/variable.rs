@@ -26,7 +26,7 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 	let follow = SetHighlightOpts::builder().link("@constant").build();
-	api::sel_hl(0, "@lsp.type.const", &follow)?;
+	api::set_hl(0, "@lsp.type.const", &follow)?;
 	api::set_hl(0, "@lsp.mod.constant", &follow)?;
 	api::set_hl(0, "@lsp.typemod.const", &follow)?;
 
