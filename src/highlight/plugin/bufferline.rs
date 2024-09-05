@@ -155,16 +155,15 @@ pub fn load() -> Result<(), api::Error> {
 		}
 	}
 
-    api::sel_hl(0,
-        f!("{PRE}{MRK}"),
-        &SetHighlightOpts::builder()
-            .link(MRK)
-            .build(),
-    )?;
+	api::sel_hl(
+		0,
+		f!("{PRE}{MRK}"),
+		&SetHighlightOpts::builder().link(MRK).build(),
+	)?;
 
 	// unsupported because I don't use them
 	for (group, link) in &[
-        (f!("{PRE}{BUF}", f!("{PRE}{BUF}{SEL}")),
+		(f!("{PRE}{BUF}"), f!("{PRE}{BUF}{SEL}")),
 		(f!("{PRE}{TAB}"), f!("{PRE}{BUF}Background")),
 		(f!("{PRE}{TAB}{SEL}"), f!("{PRE}{BUF}{SEL}")),
 		(f!("{PRE}{DUP}{SEL}"), f!("{PRE}{BUF}{VIS}")),
