@@ -9,10 +9,10 @@ pkgs.rustPlatform.buildRustPackage {
   cargoLock.lockFile = ./Cargo.lock;
 
   postInstall = ''
-    mv $out/lib $out/lua
-	mv $out/lua/libvity.so $out/lua/vity.so
+       mv $out/lib $out/lua
+    mv $out/lua/libvity.so $out/lua/vity.so
 
-	mkdir $out/colors
-	echo "require('vity').load()" > $out/colors/vity.lua
+    mkdir $out/colors
+    echo "require('vity').load()" > $out/colors/vity.lua
   '';
 }
