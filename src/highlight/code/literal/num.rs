@@ -20,17 +20,17 @@ pub fn load() -> Result<(), api::Error> {
 	let bin = SetHighlightOpts::builder()
 		.foreground(&hsl(base.h, base.s, base.l + 6))
 		.build();
-	api::set_hl(0, "RustBinNumber", &bin)?;
+	api::set_hl(0, "rustBinNumber", &bin)?;
 
 	let oct = SetHighlightOpts::builder()
 		.foreground(&hsl(base.h, base.s, base.l - 6))
 		.build();
-	api::set_hl(0, "RustOctNumber", &oct)?;
+	api::set_hl(0, "rustOctNumber", &oct)?;
 
 	let hex = SetHighlightOpts::builder()
 		.foreground(&hsl(base.h + 30, base.s, base.l + 7))
 		.build();
-	api::set_hl(0, "RustHexNumber", &hex)?;
+	api::set_hl(0, "rustHexNumber", &hex)?;
 	api::set_hl(0, "DevIconHexadecimal", &hex)?;
 
 	api::set_hl(
@@ -40,7 +40,6 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(base.h - 10, base.s, base.l))
 			.build(),
 	)?;
-	/*
 	api::set_hl(
 		0,
 		"NvimFloat",
@@ -51,7 +50,6 @@ pub fn load() -> Result<(), api::Error> {
 		"@number.float",
 		&SetHighlightOpts::builder().link("Float").build(),
 	)?;
-	*/
 
 	Ok(())
 }
