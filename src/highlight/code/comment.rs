@@ -14,6 +14,7 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	/*
 	api::set_hl(
 		0,
 		"@comment.documentation",
@@ -22,6 +23,7 @@ pub fn load() -> Result<(), api::Error> {
 			.italic(true)
 			.build(),
 	)?;
+	*/
 
 	api::set_hl(
 		0,
