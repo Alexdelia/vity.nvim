@@ -38,23 +38,6 @@ pub fn load() -> Result<(), api::Error> {
 			.nocombine(true)
 			.build(),
 	)?;
-	/*
-	api::set_hl(
-		0,
-		"@lsp.type.builtinType",
-		&SetHighlightOpts::builder().link("@type.builtin").build(),
-	)?;
-	*/
-
-	api::set_hl(
-		0,
-		"@lsp.type.typeAlias",
-		&SetHighlightOpts::builder()
-			.foreground(&hsl(base.h + 20, base.s, base.l))
-			.blend(2 / 3)
-			.nocombine(true)
-			.build(),
-	)?;
 
 	Ok(())
 }
