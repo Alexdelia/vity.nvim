@@ -12,9 +12,9 @@ pub fn load() -> Result<(), api::Error> {
 			.nocombine(true)
 			.build(),
 	)?;
-	let follow = SetHighlightOpts::builder().link("@variable").build();
-	api::set_hl(0, "@lsp.type.variable", &follow)?;
-	api::set_hl(0, "@lsp.type.property", &follow)?;
+	// let follow = SetHighlightOpts::builder().link("@variable").build();
+	// api::set_hl(0, "@lsp.type.variable", &follow)?;
+	// api::set_hl(0, "@lsp.type.property", &follow)?;
 
 	api::set_hl(
 		0,
@@ -25,10 +25,10 @@ pub fn load() -> Result<(), api::Error> {
 			.nocombine(true)
 			.build(),
 	)?;
-	let follow = SetHighlightOpts::builder().link("@constant").build();
-	api::set_hl(0, "@lsp.type.const", &follow)?;
-	api::set_hl(0, "@lsp.mod.constant", &follow)?;
-	api::set_hl(0, "@lsp.typemod.const", &follow)?;
+	// let follow = SetHighlightOpts::builder().link("@constant").build();
+	// api::set_hl(0, "@lsp.type.const", &follow)?;
+	// api::set_hl(0, "@lsp.mod.constant", &follow)?;
+	// api::set_hl(0, "@lsp.typemod.const", &follow)?;
 
 	Ok(())
 }

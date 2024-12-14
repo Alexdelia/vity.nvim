@@ -40,6 +40,7 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(base.h - 10, base.s, base.l))
 			.build(),
 	)?;
+	/*
 	api::set_hl(
 		0,
 		"NvimFloat",
@@ -50,6 +51,7 @@ pub fn load() -> Result<(), api::Error> {
 		"@number.float",
 		&SetHighlightOpts::builder().link("Float").build(),
 	)?;
+	*/
 
 	Ok(())
 }

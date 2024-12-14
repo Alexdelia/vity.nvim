@@ -25,11 +25,13 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(hue_char, base.s, base.l))
 			.build(),
 	)?;
+	/*
 	api::set_hl(
 		0,
 		"Character",
 		&SetHighlightOpts::builder().link("Char").build(),
 	)?;
+	*/
 
 	let lum_quote = base.l - 20;
 	api::set_hl(
@@ -39,11 +41,13 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(base.h, base.s, lum_quote))
 			.build(),
 	)?;
+	/*
 	api::set_hl(
 		0,
 		"NvimDoubleQuote",
 		&SetHighlightOpts::builder().link("NvimStringQuote").build(),
 	)?;
+	*/
 
 	api::set_hl(
 		0,
