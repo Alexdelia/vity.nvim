@@ -7,7 +7,7 @@ use nvim_oxi::api;
 pub fn load() -> Result<(), api::Error> {
 	word::load()?;
 	num::load()?;
-	// alpha::load()?;
+	alpha::load()?;
 
 	Ok(())
 }
