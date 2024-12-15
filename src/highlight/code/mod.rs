@@ -9,7 +9,7 @@ mod r#type;
 use nvim_oxi::api;
 
 pub fn load() -> Result<(), api::Error> {
-	literal::load()?;
+	// literal::load()?;
 	r#type::load()?;
 	// identifier::load()?;
 	// keyword::load()?;
