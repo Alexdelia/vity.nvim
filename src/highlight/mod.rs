@@ -5,9 +5,9 @@ mod window;
 use nvim_oxi::api;
 
 pub fn load() -> Result<(), api::Error> {
-	code::load()?;
+	// code::load()?;
 	window::load()?;
-	plugin::load()?;
+	// plugin::load()?;
 
 	Ok(())
 }
