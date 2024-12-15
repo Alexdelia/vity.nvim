@@ -9,7 +9,7 @@ pub fn load() -> Result<(), api::Error> {
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(207, 61, 59))
 			.italic(false)
-			.nocombine(true)
+			// .nocombine(true)
 			.build(),
 	)?;
 
