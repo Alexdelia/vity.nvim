@@ -6,10 +6,16 @@ pkgs.rustPlatform.buildRustPackage {
   src = pkgs.lib.cleanSource ./.;
 
   cargoSha256 = pkgs.lib.fakeSha256;
-  cargoLock.lockFile = ./Cargo.lock;
+  cargoLock = {
+    lockFile = ./Cargo.lock;
+
+    outputHashes = {
+      "nvim-oxi-0.5.1" = "sha256-qq6uuGEkkDdnwyUnkAl1+E/DGd5bPuHSpwr74+EW0rE=";
+    };
+  };
 
   postInstall = ''
-       mv $out/lib $out/lua
+    mv $out/lib $out/lua
     mv $out/lua/libvity.so $out/lua/vity.so
 
     mkdir $out/colors
