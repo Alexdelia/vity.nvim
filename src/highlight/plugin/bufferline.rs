@@ -151,7 +151,7 @@ pub fn load() -> Result<(), api::Error> {
 		(f!("{PRE}{NUM}{SEL}"), vec![f!("{PRE}{NUM}{VIS}")]),
 	] {
 		for group in groups {
-			api::set_hl(0, group, &SetHighlightOpts::builder().link(link).build())?;
+			// api::set_hl(0, group, &SetHighlightOpts::builder().link(link).build())?;
 		}
 	}
 
@@ -181,7 +181,7 @@ pub fn load() -> Result<(), api::Error> {
 		(f!("{PRE}{CLOSE_BTN}{SEL}"), f!("{PRE}{NUM}{SEL}")),
 		(f!("{PRE}{CLOSE_BTN}{VIS}"), f!("{PRE}{NUM}{VIS}")),
 	] {
-		api::set_hl(0, group, &SetHighlightOpts::builder().link(link).build())?;
+		// api::set_hl(0, group, &SetHighlightOpts::builder().link(link).build())?;
 	}
 
 	// TODO: separator
