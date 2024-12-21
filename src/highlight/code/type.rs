@@ -7,7 +7,7 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"Type",
 		&SetHighlightOpts::builder()
-			.bold(true)
+			// .bold(true)
 			.foreground(&hsl(207, 61, 59))
 			.build(),
 	)?;
