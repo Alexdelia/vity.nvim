@@ -10,7 +10,7 @@ pkgs.rustPlatform.buildRustPackage {
     lockFile = ./Cargo.lock;
 
     outputHashes = {
-      "nvim-oxi-0.5.1" = "sha256-qq6uuGEkkDdnwyUnkAl1+E/DGd5bPuHSpwr74+EW0rE=";
+      "nvim-oxi-0.5.1" = "sha256-SHAXUZIxAEtAt40xFmOJeyRy6+jeXOcU8O7tC6pCvY4=";
     };
   };
 
