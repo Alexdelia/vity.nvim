@@ -13,6 +13,7 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	/*
 	let base = Hsl {
 		h: 140,
 		s: 73,
@@ -38,6 +39,7 @@ pub fn load() -> Result<(), api::Error> {
 			.nocombine(true)
 			.build(),
 	)?;
+	*/
 
 	Ok(())
 }
