@@ -7,9 +7,8 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"Type",
 		&SetHighlightOpts::builder()
+			.cterm("none")
 			.foreground(&hsl(207, 61, 59))
-			.italic(false)
-			// .nocombine(true)
 			.build(),
 	)?;
 
