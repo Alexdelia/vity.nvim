@@ -1,4 +1,4 @@
-mod bufferline;
+// mod bufferline;
 
 use nvim_oxi::api;
 
