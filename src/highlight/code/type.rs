@@ -7,12 +7,10 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"Type",
 		&SetHighlightOpts::builder()
-			// .bold(true)
 			.foreground(&hsl(207, 61, 59))
 			.build(),
 	)?;
 
-	/*
 	let base = Hsl {
 		h: 140,
 		s: 73,
@@ -24,8 +22,6 @@ pub fn load() -> Result<(), api::Error> {
 		"Structure",
 		&SetHighlightOpts::builder()
 			.foreground(&base.to_rgb())
-			.italic(false)
-			.nocombine(true)
 			.build(),
 	)?;
 
@@ -34,11 +30,8 @@ pub fn load() -> Result<(), api::Error> {
 		"@type.builtin",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(base.h + 10, base.s + 5, base.l - 7))
-			.italic(false)
-			.nocombine(true)
 			.build(),
 	)?;
-	*/
 
 	Ok(())
 }
