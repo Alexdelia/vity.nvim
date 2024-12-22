@@ -11,7 +11,7 @@ use nvim_oxi::api;
 pub fn load() -> Result<(), api::Error> {
 	// literal::load()?;
 	r#type::load()?;
-	// identifier::load()?;
+	identifier::load()?;
 	// keyword::load()?;
 	delimiter::load()?;
 	// comment::load()?;

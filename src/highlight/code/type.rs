@@ -24,6 +24,19 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&base.to_rgb())
 			.build(),
 	)?;
+	api::set_hl(
+		0,
+		"@lsp.type.struct",
+		&SetHighlightOpts::builder().link("Structure").build(),
+	)?;
+
+	api::set_hl(
+		0,
+		"@lsp.type.enum",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(base.h + 10, base.s, base.l - 5))
+			.build(),
+	)?;
 
 	api::set_hl(
 		0,

@@ -15,6 +15,15 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	api::set_hl(
+		0,
+		"Special",
+		&SetHighlightOpts::builder()
+			.foreground("#ff0000")
+			.bold(true)
+			.build(),
+	)?;
+
 	variable::load()?;
 	function::load()?;
 

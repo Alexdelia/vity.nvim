@@ -14,30 +14,24 @@ pub fn load() -> Result<(), api::Error> {
 		"Function",
 		&SetHighlightOpts::builder()
 			.foreground(&base.to_rgb())
-			.italic(false)
 			.bold(true)
-			.nocombine(true)
 			.build(),
 	)?;
+	let follow = SetHighlightOpts::builder().link("Function").build();
+	api::set_hl(0, "@function", &follow)?;
+	api::set_hl(0, "@lsp.type.function", &follow)?;
 
 	api::set_hl(
 		0,
 		"Macro",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(base.h - 13, base.s, base.l))
-			.italic(false)
 			.bold(true)
-			.nocombine(true)
 			.build(),
 	)?;
-
-	/*
-	api::set_hl(
-		0,
-		"@function.builtin",
-		&SetHighlightOpts::builder().link("Macro").build(),
-	)?;
-	*/
+	let follow = SetHighlightOpts::builder().link("Macro").build();
+	api::set_hl(0, "@lsp.type.macro", &follow)?;
+	api::set_hl(0, "@function.builtin", &follow)?;
 
 	Ok(())
 }
