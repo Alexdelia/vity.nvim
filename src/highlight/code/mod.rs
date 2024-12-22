@@ -13,9 +13,9 @@ pub fn load() -> Result<(), api::Error> {
 	r#type::load()?;
 	// identifier::load()?;
 	// keyword::load()?;
-	// delimiter::load()?;
+	delimiter::load()?;
 	// comment::load()?;
-	// namespace::load()?;
+	namespace::load()?;
 
 	Ok(())
 }
