@@ -9,6 +9,7 @@ pub fn load() -> Result<(), api::Error> {
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(180, 74, 95))
 			.italic(true)
+			.nocombine(true)
 			.build(),
 	)?;
 	let follow = SetHighlightOpts::builder().link("@variable").build();
