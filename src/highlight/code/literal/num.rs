@@ -40,6 +40,7 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(base.h - 10, base.s, base.l))
 			.build(),
 	)?;
+	// let follow = SetHighlightOpts::builder().link("@").build();
 	api::set_hl(
 		0,
 		"NvimFloat",
