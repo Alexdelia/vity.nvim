@@ -1,4 +1,7 @@
+mod declaration;
 mod flow;
+mod import;
+mod modifier;
 
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
@@ -14,6 +17,9 @@ pub fn load() -> Result<(), api::Error> {
 	)?;
 
 	flow::load()?;
+	declaration::load()?;
+	import::load()?;
+	modifier::load()?;
 
 	Ok(())
 }
