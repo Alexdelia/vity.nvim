@@ -14,8 +14,8 @@ pub fn load() -> Result<(), api::Error> {
 		"Function",
 		&SetHighlightOpts::builder()
 			.foreground(&base.to_rgb())
-			.italic(false)
 			.bold(true)
+			.nocombine(true)
 			.build(),
 	)?;
 	let follow = SetHighlightOpts::builder().link("Function").build();
@@ -28,6 +28,7 @@ pub fn load() -> Result<(), api::Error> {
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(base.h - 13, base.s, base.l))
 			.bold(true)
+			.nocombine(true)
 			.build(),
 	)?;
 	let follow = SetHighlightOpts::builder().link("Macro").build();

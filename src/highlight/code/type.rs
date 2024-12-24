@@ -8,6 +8,7 @@ pub fn load() -> Result<(), api::Error> {
 		"Type",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(207, 61, 59))
+			.nocombine(true)
 			.build(),
 	)?;
 
@@ -22,6 +23,7 @@ pub fn load() -> Result<(), api::Error> {
 		"Structure",
 		&SetHighlightOpts::builder()
 			.foreground(&base.to_rgb())
+			.nocombine(true)
 			.build(),
 	)?;
 	api::set_hl(
