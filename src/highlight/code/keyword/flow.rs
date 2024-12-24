@@ -23,7 +23,7 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"@lsp.mod.controlFlow",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(45, 20, 40))
+			.foreground(&hsl(45, 40, 75))
 			.build(),
 	)?;
 
