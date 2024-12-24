@@ -56,5 +56,11 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	let path = SetHighlightOpts::builder()
+		.foreground(&hsl(80, 50, 50))
+		.build();
+	api::set_hl(0, "@string.special.path", &path)?;
+	api::set_hl(0, "@lsp.type.path", &path)?;
+
 	Ok(())
 }
