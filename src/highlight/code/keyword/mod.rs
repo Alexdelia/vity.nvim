@@ -12,7 +12,7 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"Keyword",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(54, 66, 46))
+			.foreground(&hsl(207, 61, 59))
 			.build(),
 	)?;
 
