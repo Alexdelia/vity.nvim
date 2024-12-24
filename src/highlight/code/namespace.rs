@@ -8,6 +8,7 @@ pub fn load() -> Result<(), api::Error> {
 		"@module",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(60, 40, 40))
+			.nocombine(true)
 			.build(),
 	)?;
 	let f = follow!("@module");
