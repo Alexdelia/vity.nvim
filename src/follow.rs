@@ -1,8 +1,8 @@
 use nvim_oxi::api::{opts::SetHighlightOpts, HlGroup};
 
-pub fn follow<HL>(hl: HL) -> SetHighlightOpts
-where
-	HL: HlGroup,
-{
-	SetHighlightOpts::builder().link(hl).build()
+#[macro_export]
+macro_rules! follow {
+	($hl:expr) => {
+		&SetHighlightOpts::builder().link($hl).build()
+	};
 }

@@ -12,9 +12,9 @@ pub fn load() -> Result<(), api::Error> {
 			.nocombine(true)
 			.build(),
 	)?;
-	let follow = SetHighlightOpts::builder().link("@variable").build();
-	api::set_hl(0, "@lsp.type.variable", &follow)?;
-	api::set_hl(0, "@lsp.type.property", &follow)?;
+	let f = follow!("@variable");
+	api::set_hl(0, "@lsp.type.variable", f)?;
+	api::set_hl(0, "@lsp.type.property", f)?;
 
 	api::set_hl(
 		0,
@@ -24,8 +24,8 @@ pub fn load() -> Result<(), api::Error> {
 			.italic(true)
 			.build(),
 	)?;
-	let follow = SetHighlightOpts::builder().link("Constant").build();
-	api::set_hl(0, "@constant", &follow)?;
+	let f = follow!("Constant");
+	api::set_hl(0, "@constant", f)?;
 
 	Ok(())
 }

@@ -18,9 +18,9 @@ pub fn load() -> Result<(), api::Error> {
 			.nocombine(true)
 			.build(),
 	)?;
-	let follow = SetHighlightOpts::builder().link("Function").build();
-	api::set_hl(0, "@function", &follow)?;
-	api::set_hl(0, "@lsp.type.function", &follow)?;
+	let f = follow!("Function");
+	api::set_hl(0, "@function", f)?;
+	api::set_hl(0, "@lsp.type.function", f)?;
 
 	api::set_hl(
 		0,
@@ -31,9 +31,9 @@ pub fn load() -> Result<(), api::Error> {
 			.nocombine(true)
 			.build(),
 	)?;
-	let follow = SetHighlightOpts::builder().link("Macro").build();
-	api::set_hl(0, "@lsp.type.macro", &follow)?;
-	api::set_hl(0, "@function.builtin", &follow)?;
+	let f = follow!("Macro");
+	api::set_hl(0, "@lsp.type.macro", f)?;
+	api::set_hl(0, "@function.builtin", f)?;
 
 	Ok(())
 }

@@ -1,7 +1,9 @@
-mod color;
-// mod follow;
-mod highlight;
+#[macro_use]
+mod follow;
 mod hsl;
+
+mod color;
+mod highlight;
 
 use hsl::{convert::to_rgb::hsl, Hsl};
 

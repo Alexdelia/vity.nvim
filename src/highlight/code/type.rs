@@ -26,11 +26,8 @@ pub fn load() -> Result<(), api::Error> {
 			.nocombine(true)
 			.build(),
 	)?;
-	api::set_hl(
-		0,
-		"@lsp.type.struct",
-		&SetHighlightOpts::builder().link("Structure").build(),
-	)?;
+	let f = follow!("Structure");
+	api::set_hl(0, "@lsp.type.struct", f)?;
 
 	api::set_hl(
 		0,
