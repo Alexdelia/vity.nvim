@@ -4,6 +4,7 @@ mod identifier;
 mod keyword;
 mod literal;
 mod namespace;
+mod operator;
 mod r#type;
 
 use nvim_oxi::api;
@@ -13,6 +14,7 @@ pub fn load() -> Result<(), api::Error> {
 	r#type::load()?;
 	identifier::load()?;
 	keyword::load()?;
+	operator::load()?;
 	delimiter::load()?;
 	comment::load()?;
 	namespace::load()?;
