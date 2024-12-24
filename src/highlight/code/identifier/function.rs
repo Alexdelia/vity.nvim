@@ -14,6 +14,7 @@ pub fn load() -> Result<(), api::Error> {
 		"Function",
 		&SetHighlightOpts::builder()
 			.foreground(&base.to_rgb())
+			.italic(false)
 			.bold(true)
 			.build(),
 	)?;
