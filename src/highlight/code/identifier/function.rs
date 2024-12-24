@@ -32,6 +32,7 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 	let f = follow!("Macro");
+	api::set_hl(0, "@function.macro", f)?;
 	api::set_hl(0, "@lsp.type.macro", f)?;
 	api::set_hl(0, "@function.builtin", f)?;
 
