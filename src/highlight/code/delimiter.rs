@@ -7,7 +7,7 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"Delimiter",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(0, 0, 75))
+			.foreground(&hsl(0, 0, 66))
 			.build(),
 	)?;
 
