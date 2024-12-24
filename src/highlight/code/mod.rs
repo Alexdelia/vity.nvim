@@ -12,9 +12,9 @@ pub fn load() -> Result<(), api::Error> {
 	literal::load()?;
 	r#type::load()?;
 	identifier::load()?;
-	// keyword::load()?;
+	keyword::load()?;
 	delimiter::load()?;
-	// comment::load()?;
+	comment::load()?;
 	namespace::load()?;
 
 	Ok(())
