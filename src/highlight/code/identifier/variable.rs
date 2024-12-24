@@ -21,7 +21,7 @@ pub fn load() -> Result<(), api::Error> {
 		"Constant",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(230, 60, 55))
-			.italic(true)
+			.nocombine(true)
 			.build(),
 	)?;
 	let f = follow!("Constant");
