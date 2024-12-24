@@ -48,5 +48,13 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	api::set_hl(
+		0,
+		"@lsp.type.formatSpecifier",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(280, 63, 47))
+			.build(),
+	)?;
+
 	Ok(())
 }
