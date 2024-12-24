@@ -53,6 +53,7 @@ pub fn load() -> Result<(), api::Error> {
 		.build();
 	api::set_hl(0, "@lsp.type.formatSpecifier", &interpolation)?;
 	api::set_hl(0, "@punctuation.special.bash", &interpolation)?;
+	api::set_hl(0, "@punctuation.special.nix", &interpolation)?;
 
 	let path = SetHighlightOpts::builder()
 		.foreground(&hsl(80, 50, 50))
