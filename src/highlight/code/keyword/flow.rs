@@ -19,5 +19,13 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	api::set_hl(
+		0,
+		"@lsp.mod.controlFlow",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(45, 20, 40))
+			.build(),
+	)?;
+
 	Ok(())
 }
