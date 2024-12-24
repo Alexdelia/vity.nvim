@@ -10,6 +10,8 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(0, 0, 66))
 			.build(),
 	)?;
+	let f = follow!("Delimiter");
+	api::set_hl(0, "@constructor.lua", f)?;
 
 	Ok(())
 }
