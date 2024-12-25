@@ -20,14 +20,5 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
-	api::set_hl(
-		0,
-		"@punctuation.special.rust",
-		&SetHighlightOpts::builder()
-			.foreground(&hsl(327, 12, 45))
-			.nocombine(true)
-			.build(),
-	)?;
-
 	Ok(())
 }

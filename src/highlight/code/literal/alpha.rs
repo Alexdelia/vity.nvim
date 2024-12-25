@@ -66,15 +66,6 @@ pub fn load() -> Result<(), api::Error> {
 	api::set_hl(0, "@punctuation.special.nix", &interpolation)?;
 	api::set_hl(0, "@punctuation.special.yuck", &interpolation)?;
 
-	api::set_hl(
-		0,
-		"@punctuation.special.rust",
-		&SetHighlightOpts::builder()
-			.foreground(&hsl(327, 12, 45))
-			.nocombine(true)
-			.build(),
-	)?;
-
 	let path = SetHighlightOpts::builder()
 		.foreground(&hsl(80, 50, 50))
 		.build();
