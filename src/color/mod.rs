@@ -2,8 +2,9 @@ use crate::Hsl;
 
 pub const BACKGROUND: Hsl = Hsl { h: 0, s: 0, l: 12 };
 pub const BACKGROUND_D1: Hsl = Hsl { h: 0, s: 0, l: 10 };
-pub const BACKGROUND_D2: Hsl = Hsl { h: 0, s: 0, l: 8 };
+// pub const BACKGROUND_D2: Hsl = Hsl { h: 0, s: 0, l: 8 };
 
+/*
 pub const PRIMARY: Hsl = Hsl {
 	h: 260,
 	s: 100,
@@ -14,6 +15,7 @@ pub const SECONDARY_HUE: Hsl = Hsl {
 	s: 100,
 	l: 69,
 };
+*/
 
 pub const ERROR: Hsl = Hsl { h: 0, s: 65, l: 50 };
 pub const WARNING: Hsl = Hsl {

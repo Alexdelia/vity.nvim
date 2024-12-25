@@ -1,6 +1,6 @@
 use super::{
 	convert::{from_rgb::from_rgb, to_rgb::hsl_to_rgb},
-	Float, Hsl, Hue, Lum, Sat,
+	Float, Hsl,
 };
 
 pub fn blend(c0: &Hsl, c1: &Hsl, k: f32) -> Hsl {
