@@ -16,7 +16,7 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 	let f = follow!("Conditional");
-	api::set_hl(0, "@keyword.conditional", &f)?;
+	api::set_hl(0, "@keyword.conditional", f)?;
 
 	api::set_hl(
 		0,
@@ -42,7 +42,7 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 	let f = follow!("Repeat");
-	api::set_hl(0, "@keyword.repeat", &f)?;
+	api::set_hl(0, "@keyword.repeat", f)?;
 
 	Ok(())
 }
