@@ -1,4 +1,4 @@
-mod blend;
+// mod blend;
 pub mod convert;
 
 type Float = f64;
@@ -25,6 +25,7 @@ impl Hsl {
 		convert::to_rgb::hsl(self.h, self.s, self.l)
 	}
 
+	/*
 	/// blend two HSL colors
 	/// this works like transparency where *k* is the alpha/transparency of the first color
 	///
@@ -45,4 +46,5 @@ impl Hsl {
 	pub fn blend(&self, other: &Hsl, k: f32) -> Hsl {
 		blend::blend(self, other, k)
 	}
+	*/
 }
