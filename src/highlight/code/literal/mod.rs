@@ -9,6 +9,7 @@ pub fn load() -> Result<(), api::Error> {
 	word::load()?;
 	num::load()?;
 	alpha::load()?;
+	symbol::load()?;
 
 	Ok(())
 }
