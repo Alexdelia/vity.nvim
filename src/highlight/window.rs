@@ -17,6 +17,22 @@ pub fn load() -> Result<(), api::Error> {
 			.background(&BACKGROUND_D1.to_rgb())
 			.build(),
 	)?;
+	api::set_hl(
+		0,
+		"StatusLine",
+		&SetHighlightOpts::builder()
+			.background(&BACKGROUND.to_rgb())
+			.foreground(&hsl(0, 0, 75))
+			.build(),
+	)?;
+	api::set_hl(
+		0,
+		"StatusLineNC",
+		&SetHighlightOpts::builder()
+			.background(&BACKGROUND.to_rgb())
+			.foreground(&hsl(0, 0, 50))
+			.build(),
+	)?;
 
 	Ok(())
 }
