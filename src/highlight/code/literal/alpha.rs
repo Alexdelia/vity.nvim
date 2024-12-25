@@ -55,6 +55,8 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(0, 100, 92))
 			.build(),
 	)?;
+	let f = follow!("@string.escape");
+	api::set_hl(0, "@lsp.type.escapeSequence", f)?;
 
 	let interpolation = SetHighlightOpts::builder()
 		.foreground(&hsl(280, 63, 47))
@@ -64,11 +66,29 @@ pub fn load() -> Result<(), api::Error> {
 	api::set_hl(0, "@punctuation.special.nix", &interpolation)?;
 	api::set_hl(0, "@punctuation.special.yuck", &interpolation)?;
 
+	api::set_hl(
+		0,
+		"@punctuation.special.rust",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(327, 12, 45))
+			.nocombine(true)
+			.build(),
+	)?;
+
 	let path = SetHighlightOpts::builder()
 		.foreground(&hsl(80, 50, 50))
 		.build();
 	api::set_hl(0, "@string.special.path", &path)?;
 	api::set_hl(0, "@lsp.type.path", &path)?;
+
+	api::set_hl(
+		0,
+		"@character.special",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(280, 40, 50))
+			.nocombine(true)
+			.build(),
+	)?;
 
 	Ok(())
 }

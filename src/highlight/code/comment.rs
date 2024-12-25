@@ -14,7 +14,6 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
-	/*
 	api::set_hl(
 		0,
 		"@comment.documentation",
@@ -23,7 +22,9 @@ pub fn load() -> Result<(), api::Error> {
 			.italic(true)
 			.build(),
 	)?;
-	*/
+	let f = follow!("@comment.documentation");
+	api::set_hl(0, "@string.documentation", f)?;
+	api::set_hl(0, "@lsp.typemod.comment.documentation", f)?;
 
 	api::set_hl(
 		0,

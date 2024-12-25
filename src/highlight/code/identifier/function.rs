@@ -36,5 +36,15 @@ pub fn load() -> Result<(), api::Error> {
 	api::set_hl(0, "@lsp.type.macro", f)?;
 	api::set_hl(0, "@function.builtin", f)?;
 
+	api::set_hl(
+		0,
+		"@constructor",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(base.h - 7, base.s, base.l))
+			.bold(true)
+			.nocombine(true)
+			.build(),
+	)?;
+
 	Ok(())
 }

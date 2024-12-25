@@ -17,6 +17,7 @@ pub fn load() -> Result<(), api::Error> {
 	)?;
 	let f = follow!("Conditional");
 	api::set_hl(0, "@keyword.conditional", f)?;
+	api::set_hl(0, "@lsp.mod.controlFlow", f)?;
 
 	api::set_hl(
 		0,

@@ -1,5 +1,6 @@
 mod alpha;
 mod num;
+mod symbol;
 mod word;
 
 use nvim_oxi::api;
