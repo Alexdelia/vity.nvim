@@ -1,4 +1,4 @@
-use crate::hsl;
+use crate::{hsl, Hsl};
 
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
