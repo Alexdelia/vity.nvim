@@ -1,6 +1,7 @@
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
 use crate::color::{BACKGROUND, BACKGROUND_D1};
+use crate::hsl;
 
 pub fn load() -> Result<(), api::Error> {
 	api::set_hl(
