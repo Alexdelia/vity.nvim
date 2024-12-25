@@ -34,6 +34,7 @@ pub fn load() -> Result<(), api::Error> {
 		"@lsp.type.enum",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(base.h + 10, base.s, base.l - 5))
+			.nocombine(true)
 			.build(),
 	)?;
 
@@ -42,6 +43,7 @@ pub fn load() -> Result<(), api::Error> {
 		"@type.builtin",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(base.h + 10, base.s + 5, base.l - 7))
+			.nocombine(true)
 			.build(),
 	)?;
 

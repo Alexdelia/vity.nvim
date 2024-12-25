@@ -41,6 +41,8 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(293, 61, 62))
 			.build(),
 	)?;
+	let f = follow!("Repeat");
+	api::set_hl(0, "@keyword.repeat", &f)?;
 
 	Ok(())
 }

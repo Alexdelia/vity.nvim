@@ -22,11 +22,16 @@ pub fn load() -> Result<(), api::Error> {
 	api::set_hl(0, "@lsp.type.variable", f)?;
 	api::set_hl(0, "@lsp.type.property", f)?;
 
+	let constant = Hsl {
+		h: 230,
+		s: 60,
+		l: 55,
+	};
 	api::set_hl(
 		0,
 		"Constant",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(230, 60, 55))
+			.foreground(&constant.to_rgb())
 			.nocombine(true)
 			.build(),
 	)?;
@@ -38,15 +43,16 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"@variable.builtin",
 		&SetHighlightOpts::builder()
-			.foreground(
-				&Hsl {
-					h: 280,
-					s: var.s,
-					l: var.l - 10,
-				}
-				.to_rgb(),
-			)
+			.foreground(&hsl(280, var.s, var.l - 10))
 			.italic(true)
+			.nocombine(true)
+			.build(),
+	)?;
+	api::set_hl(
+		0,
+		"@constant.builtin",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(constant.h + 25, constant.s, constant.l))
 			.nocombine(true)
 			.build(),
 	)?;

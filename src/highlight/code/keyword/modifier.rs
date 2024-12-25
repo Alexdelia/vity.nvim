@@ -8,6 +8,16 @@ pub fn load() -> Result<(), api::Error> {
 		"@keyword.modifier",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(60, 53, 55))
+			.italic(true)
+			.build(),
+	)?;
+
+	api::set_hl(
+		0,
+		"@keyword.coroutine",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(45, 68, 53))
+			.italic(true)
 			.build(),
 	)?;
 
