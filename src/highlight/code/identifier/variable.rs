@@ -57,5 +57,14 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	api::set_hl(
+		0,
+		"@variable.parameter.builtin.nix",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(0, 0, 50))
+			.nocombine(true)
+			.build(),
+	)?;
+
 	Ok(())
 }
