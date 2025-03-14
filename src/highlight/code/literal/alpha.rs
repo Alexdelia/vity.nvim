@@ -65,6 +65,7 @@ pub fn load() -> Result<(), api::Error> {
 	api::set_hl(0, "@punctuation.special.bash", &interpolation)?;
 	api::set_hl(0, "@punctuation.special.nix", &interpolation)?;
 	api::set_hl(0, "@punctuation.special.yuck", &interpolation)?;
+	api::set_hl(0, "@punctuation.special.javascript", &interpolation)?;
 
 	let path = SetHighlightOpts::builder()
 		.foreground(&hsl(80, 50, 50))

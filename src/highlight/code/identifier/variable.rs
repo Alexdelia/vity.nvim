@@ -21,6 +21,7 @@ pub fn load() -> Result<(), api::Error> {
 	let f = follow!("@variable");
 	api::set_hl(0, "@lsp.type.variable", f)?;
 	api::set_hl(0, "@lsp.type.property", f)?;
+	api::set_hl(0, "@tag.attribute", f)?;
 
 	let constant = Hsl {
 		h: 230,

@@ -5,6 +5,7 @@ mod keyword;
 mod literal;
 mod namespace;
 mod operator;
+mod tag;
 mod r#type;
 
 use nvim_oxi::api;
@@ -18,6 +19,7 @@ pub fn load() -> Result<(), api::Error> {
 	delimiter::load()?;
 	comment::load()?;
 	namespace::load()?;
+	tag::load()?;
 
 	Ok(())
 }
