@@ -7,7 +7,8 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"@tag",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(200, 80, 50))
+			.foreground(&hsl(200, 60, 50))
+			.bold(true)
 			.build(),
 	)?;
 
