@@ -29,7 +29,7 @@
             buildInputs = [
               # openssl
               # pkg-config
-              rust-bin.stable.latest.default
+              rust-bin.nightly.latest.default
             ];
           };
       }

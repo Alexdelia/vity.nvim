@@ -14,6 +14,10 @@ pkgs.rustPlatform.buildRustPackage {
     };
   };
 
+  cargoBuildFlags = [
+    "-Zallow-features=inherent_str_constructors"
+  ];
+
   postInstall = ''
     mv $out/lib $out/lua
     mv $out/lua/libvity.so $out/lua/vity.so
