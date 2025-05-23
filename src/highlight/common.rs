@@ -11,5 +11,11 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	api::set_hl(
+		0,
+		"NonText",
+		&SetHighlightOpts::builder().foreground("NONE").build(),
+	)?;
+
 	Ok(())
 }
