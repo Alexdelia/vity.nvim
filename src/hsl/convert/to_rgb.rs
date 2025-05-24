@@ -12,7 +12,7 @@ use crate::hsl::{Float, Hue, Lum, Sat};
 pub fn hsl(h: Hue, s: Sat, l: Lum) -> String {
 	let (r, g, b) = hsl_to_rgb(h as Float / 360.0, s as Float / 100.0, l as Float / 100.0);
 
-	format!("#{:02x}{:02x}{:02x}", r, g, b)
+	format!("#{r:02x}{g:02x}{b:02x}")
 }
 
 /// converts HSL to RGB.

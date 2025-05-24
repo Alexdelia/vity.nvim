@@ -19,9 +19,11 @@
         pkgs = import nixpkgs {
           inherit system overlays;
         };
+
+        rustToolchain = pkgs.rust-bin.stable.latest.default;
       in {
         # build
-        packages.default = pkgs.callPackage ./default.nix {inherit pkgs;};
+        packages.default = pkgs.callPackage ./default.nix {inherit pkgs rustToolchain;};
 
         # dev shell
         devShells.default = with pkgs;
@@ -29,7 +31,7 @@
             buildInputs = [
               # openssl
               # pkg-config
-              rust-bin.stable.latest.default
+              rustToolchain
             ];
           };
       }
