@@ -1,28 +1,33 @@
-{pkgs ? import <nixpkgs> {}}:
-pkgs.rustPlatform.buildRustPackage {
-  pname = "vity-nvim";
-  version = "0.1.0";
-
-  src = pkgs.lib.cleanSource ./.;
-
-  cargoSha256 = pkgs.lib.fakeSha256;
-  cargoLock = {
-    lockFile = ./Cargo.lock;
-
-    outputHashes = {
-      "nvim-oxi-0.6.0" = "sha256-v7gYA1d6x2aYH5q2ahxdHSIdzQHQ7e8AxAO2MzBpUAs=";
-    };
+{
+  pkgs ? import <nixpkgs> {},
+  rustToolchain,
+}: let
+  rustPlatform = pkgs.makeRustPlatform {
+    cargo = rustToolchain;
+    rustc = rustToolchain;
   };
+in
+  rustPlatform.buildRustPackage
+  {
+    pname = "vity-nvim";
+    version = "0.1.0";
 
-  cargoBuildFlags = [
-    "-Zallow-features=inherent_str_constructors"
-  ];
+    src = pkgs.lib.cleanSource ./.;
 
-  postInstall = ''
-    mv $out/lib $out/lua
-    mv $out/lua/libvity.so $out/lua/vity.so
+    cargoSha256 = pkgs.lib.fakeSha256;
+    cargoLock = {
+      lockFile = ./Cargo.lock;
 
-    mkdir $out/colors
-    echo "require('vity').load()" > $out/colors/vity.lua
-  '';
-}
+      outputHashes = {
+        "nvim-oxi-0.6.0" = "sha256-v7gYA1d6x2aYH5q2ahxdHSIdzQHQ7e8AxAO2MzBpUAs=";
+      };
+    };
+
+    postInstall = ''
+      mv $out/lib $out/lua
+      mv $out/lua/libvity.so $out/lua/vity.so
+
+      mkdir $out/colors
+      echo "require('vity').load()" > $out/colors/vity.lua
+    '';
+  }
