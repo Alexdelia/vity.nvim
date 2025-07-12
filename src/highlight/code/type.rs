@@ -28,6 +28,7 @@ pub fn load() -> Result<(), api::Error> {
 	)?;
 	let f = follow!("Structure");
 	api::set_hl(0, "@lsp.type.struct", f)?;
+	api::set_hl(0, "@lsp.type.class", f)?;
 
 	api::set_hl(
 		0,
