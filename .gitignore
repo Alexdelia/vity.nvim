@@ -1,5 +1,8 @@
-# dev cargo build output
-target/
+# cargo build output
+/target/
 
-# dev nix build output
-result
+# nix build output
+/result/
+
+# direnv
+/.direnv/
