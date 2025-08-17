@@ -36,7 +36,7 @@ pub fn load() -> Result<(), api::Error> {
 	for (name, color_fg, color_bg) in &[
 		(
 			"Error",
-			hsl(0, base_fg_sat, base_fg_lum + 9),
+			hsl(0, base_fg_sat, base_fg_lum + 5),
 			hsl(0, base_bg_sat - 9, base_bg_lum + 1),
 		),
 		(
