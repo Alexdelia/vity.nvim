@@ -9,4 +9,4 @@ crate-type = ["cdylib"]
 
 [dependencies]
 nvim-oxi = { git = "https://github.com/noib3/nvim-oxi.git", rev = "dfdfe59d9d8328452019f697292d4bd2eed95a56", features = ["neovim-0-11"] }
-const_format = "0.2.34"
+const_format = "0.2.35"
