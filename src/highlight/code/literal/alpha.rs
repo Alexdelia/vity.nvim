@@ -67,6 +67,15 @@ pub fn load() -> Result<(), api::Error> {
 	api::set_hl(0, "@punctuation.special.yuck", &interpolation)?;
 	api::set_hl(0, "@punctuation.special.javascript", &interpolation)?;
 
+	let hue_regex = base.h - 60;
+	api::set_hl(
+		0,
+		"@string.special.regexp",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(hue_regex, base.s, base.l))
+			.build(),
+	)?;
+
 	let path = SetHighlightOpts::builder()
 		.foreground(&hsl(80, 50, 50))
 		.build();
