@@ -1,6 +1,9 @@
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
-use crate::hsl::convert::to_rgb::hsl;
+use crate::{
+	color::BACKGROUND,
+	hsl::{convert::to_rgb::hsl, Hsl},
+};
 
 pub fn load() -> Result<(), api::Error> {
 	api::set_hl(
@@ -14,7 +17,16 @@ pub fn load() -> Result<(), api::Error> {
 	api::set_hl(
 		0,
 		"NonText",
-		&SetHighlightOpts::builder().foreground("NONE").build(),
+		&SetHighlightOpts::builder()
+			.foreground(
+				&(Hsl {
+					h: BACKGROUND.h,
+					s: BACKGROUND.s,
+					l: BACKGROUND.l + 6,
+				}
+				.to_rgb()),
+			)
+			.build(),
 	)?;
 
 	Ok(())
