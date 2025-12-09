@@ -22,5 +22,13 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	api::set_hl(
+		0,
+		"@markup.raw.block.markdown",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(40, 90, 45))
+			.build(),
+	)?;
+
 	Ok(())
 }
