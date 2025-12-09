@@ -1,4 +1,4 @@
-use crate::{hsl, Hsl};
+use crate::{color::BACKGROUND_U2, hsl, Hsl};
 
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
@@ -66,6 +66,14 @@ pub fn load() -> Result<(), api::Error> {
 	api::set_hl(0, "@punctuation.special.nix", &interpolation)?;
 	api::set_hl(0, "@punctuation.special.yuck", &interpolation)?;
 	api::set_hl(0, "@punctuation.special.javascript", &interpolation)?;
+
+	api::set_hl(
+		0,
+		"@markup.raw.markdown_inline",
+		&SetHighlightOpts::builder()
+			.background(&BACKGROUND_U2.to_rgb())
+			.build(),
+	)?;
 
 	let hue_regex = base.h - 60;
 	api::set_hl(
