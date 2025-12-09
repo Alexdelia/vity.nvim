@@ -35,6 +35,7 @@ pub fn load() -> Result<(), api::Error> {
 	api::set_hl(0, "@function.macro", f)?;
 	api::set_hl(0, "@lsp.type.macro", f)?;
 	api::set_hl(0, "@function.builtin", f)?;
+	api::set_hl(0, "@attribute.builtin.python", f)?;
 
 	api::set_hl(
 		0,
