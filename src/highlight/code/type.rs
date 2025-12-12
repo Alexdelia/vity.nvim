@@ -48,5 +48,14 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	api::set_hl(
+		0,
+		"@lsp.type.typeAlias",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(base.h + 5, base.s + 5, base.l - 7))
+			.nocombine(true)
+			.build(),
+	)?;
+
 	Ok(())
 }
