@@ -40,7 +40,8 @@
 	<i style="color: #19a1e6">readability</i>
 </h2>
 
-<br>
+<!-- avoid img.shields.io cache -->
+<img src="https://hits.dwyl.com/Alexdelia/vity.nvim.json" width="0" height="0" style="display:none;" />
 
 ## Install
 
