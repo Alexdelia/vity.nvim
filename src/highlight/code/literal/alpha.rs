@@ -1,4 +1,4 @@
-use crate::{color::BACKGROUND_U2, hsl, Hsl};
+use crate::{Hsl, color::BACKGROUND_U2, hsl};
 
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 

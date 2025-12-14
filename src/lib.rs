@@ -5,9 +5,9 @@ mod hsl;
 mod color;
 mod highlight;
 
-use hsl::{convert::to_rgb::hsl, Hsl};
+use hsl::{Hsl, convert::to_rgb::hsl};
 
-use nvim_oxi::{api, Dictionary, Function};
+use nvim_oxi::{Dictionary, Function, api};
 
 #[nvim_oxi::plugin]
 fn vity() -> nvim_oxi::Result<Dictionary> {

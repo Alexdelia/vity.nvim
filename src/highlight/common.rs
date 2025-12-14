@@ -2,7 +2,7 @@ use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
 use crate::{
 	color::BACKGROUND,
-	hsl::{convert::to_rgb::hsl, Hsl},
+	hsl::{Hsl, convert::to_rgb::hsl},
 };
 
 pub fn load() -> Result<(), api::Error> {
