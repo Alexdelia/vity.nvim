@@ -11,7 +11,7 @@
 		<img align="center"
 			height="32vw"
 			alt="github hits"
-			src="https://img.shields.io/endpoint?color=d5397b&logo=github&style=for-the-badge&url=https%3A%2F%2Fhits.dwyl.com%2FAlexdelia%2Fvitynvim.json"
+			src="https://img.shields.io/endpoint?color=d5397b&logo=github&style=for-the-badge&url=https%3A%2F%2Fhits.dwyl.com%2FAlexdelia%2Fvity%2Envim.json"
 		/>
 	</a>
 	<a href="https://rustacean.net/">
