@@ -47,6 +47,7 @@ pub fn load() -> Result<(), api::Error> {
 			.nocombine(true)
 			.build(),
 	)?;
+	api::set_hl(0, "@lsp.type.builtinType", follow!("@type.builtin"))?;
 
 	api::set_hl(
 		0,
