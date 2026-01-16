@@ -26,7 +26,7 @@ pub fn load() -> Result<(), api::Error> {
 	let constant = Hsl {
 		h: 230,
 		s: 60,
-		l: 55,
+		l: 59,
 	};
 	api::set_hl(
 		0,
