@@ -61,6 +61,7 @@ pub fn load() -> Result<(), api::Error> {
 	let interpolation = SetHighlightOpts::builder()
 		.foreground(&hsl(280, 63, 47))
 		.build();
+	api::set_hl(0, "@lsp.mod.interpolation", &interpolation)?;
 	api::set_hl(0, "@lsp.type.formatSpecifier", &interpolation)?;
 	api::set_hl(0, "@punctuation.special.bash", &interpolation)?;
 	api::set_hl(0, "@punctuation.special.nix", &interpolation)?;
