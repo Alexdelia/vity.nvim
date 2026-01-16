@@ -66,5 +66,14 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	api::set_hl(
+		0,
+		"@lsp.typemod.keyword.void.dart",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(180, 20, 45))
+			.nocombine(true)
+			.build(),
+	)?;
+
 	Ok(())
 }
