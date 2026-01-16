@@ -57,6 +57,13 @@ pub fn load() -> Result<(), api::Error> {
 			.nocombine(true)
 			.build(),
 	)?;
+	api::set_hl(
+		0,
+		"@lsp.typemod.property.instance.dart",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(255, 80, 92))
+			.build(),
+	)?;
 
 	api::set_hl(
 		0,
