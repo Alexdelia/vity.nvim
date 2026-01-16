@@ -39,6 +39,7 @@ pub fn load() -> Result<(), api::Error> {
 	let f = follow!("Constant");
 	api::set_hl(0, "@constant", f)?;
 	api::set_hl(0, "@lsp.type.const", f)?;
+	api::set_hl(0, "@lsp.typemod.property.static", f)?;
 
 	api::set_hl(
 		0,
