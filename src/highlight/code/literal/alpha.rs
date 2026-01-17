@@ -79,11 +79,13 @@ pub fn load() -> Result<(), api::Error> {
 	let hue_regex = base.h - 60;
 	api::set_hl(
 		0,
-		"@string.special.regexp",
+		"@string.regexp",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(hue_regex, base.s, base.l))
 			.build(),
 	)?;
+	let f = follow!("@string.regexp");
+	api::set_hl(0, "@string.special.regexp", f)?;
 
 	let path = SetHighlightOpts::builder()
 		.foreground(&hsl(80, 50, 50))
