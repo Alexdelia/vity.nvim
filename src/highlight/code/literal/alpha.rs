@@ -95,6 +95,32 @@ pub fn load() -> Result<(), api::Error> {
 
 	api::set_hl(
 		0,
+		"@markup.link.url.markdown_inline",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(215, 100, 80))
+			.underline(true)
+			.nocombine(true)
+			.build(),
+	)?;
+	api::set_hl(
+		0,
+		"@markup.link.markdown_inline",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(0, 0, 66))
+			.nocombine(true)
+			.build(),
+	)?;
+	api::set_hl(
+		0,
+		"@markup.link.label.markdown_inline",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(180, 74, 95))
+			.nocombine(true)
+			.build(),
+	)?;
+
+	api::set_hl(
+		0,
 		"@character.special",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(280, 40, 50))
