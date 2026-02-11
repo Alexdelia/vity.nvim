@@ -46,5 +46,8 @@ pub fn load() -> Result<(), api::Error> {
 	let f = follow!("Repeat");
 	api::set_hl(0, "@keyword.repeat", f)?;
 
+	api::set_hl(0, "dartStatement", &SetHighlightOpts::default())?;
+	api::set_hl(0, "dartExceptions", &SetHighlightOpts::default())?;
+
 	Ok(())
 }
