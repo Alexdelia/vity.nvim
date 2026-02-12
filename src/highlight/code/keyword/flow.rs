@@ -48,6 +48,7 @@ pub fn load() -> Result<(), api::Error> {
 
 	let f = follow!("Normal");
 	api::set_hl(0, "dartStatement", f)?;
+	api::set_hl(0, "dartLabel", f)?;
 	api::set_hl(0, "dartExceptions", f)?;
 
 	Ok(())
