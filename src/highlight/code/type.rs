@@ -58,5 +58,14 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	api::set_hl(
+		0,
+		"@lsp.type.lifetime",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(base.h + 10, base.s + 5, base.l - 7))
+			.nocombine(true)
+			.build(),
+	)?;
+
 	Ok(())
 }
