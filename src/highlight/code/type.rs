@@ -34,7 +34,15 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		"@lsp.type.enum",
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(base.h + 10, base.s, base.l - 5))
+			.foreground(&hsl(base.h + 20, base.s - 5, base.l - 10))
+			.nocombine(true)
+			.build(),
+	)?;
+	api::set_hl(
+		0,
+		"@lsp.type.enumMember",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(225, 60, 59))
 			.nocombine(true)
 			.build(),
 	)?;
@@ -63,6 +71,15 @@ pub fn load() -> Result<(), api::Error> {
 		"@lsp.type.lifetime",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(base.h + 10, base.s + 5, base.l - 7))
+			.nocombine(true)
+			.build(),
+	)?;
+
+	api::set_hl(
+		0,
+		"@lsp.typemod.keyword.void.dart",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(180, 20, 45))
 			.nocombine(true)
 			.build(),
 	)?;

@@ -61,6 +61,7 @@ pub fn load() -> Result<(), api::Error> {
 	let interpolation = SetHighlightOpts::builder()
 		.foreground(&hsl(280, 63, 47))
 		.build();
+	api::set_hl(0, "@lsp.mod.interpolation", &interpolation)?;
 	api::set_hl(0, "@lsp.type.formatSpecifier", &interpolation)?;
 	api::set_hl(0, "@punctuation.special.bash", &interpolation)?;
 	api::set_hl(0, "@punctuation.special.nix", &interpolation)?;
@@ -78,17 +79,45 @@ pub fn load() -> Result<(), api::Error> {
 	let hue_regex = base.h - 60;
 	api::set_hl(
 		0,
-		"@string.special.regexp",
+		"@string.regexp",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(hue_regex, base.s, base.l))
 			.build(),
 	)?;
+	let f = follow!("@string.regexp");
+	api::set_hl(0, "@string.special.regexp", f)?;
 
 	let path = SetHighlightOpts::builder()
 		.foreground(&hsl(80, 50, 50))
 		.build();
 	api::set_hl(0, "@string.special.path", &path)?;
 	api::set_hl(0, "@lsp.type.path", &path)?;
+
+	api::set_hl(
+		0,
+		"@markup.link.url.markdown_inline",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(215, 100, 80))
+			.underline(true)
+			.nocombine(true)
+			.build(),
+	)?;
+	api::set_hl(
+		0,
+		"@markup.link.markdown_inline",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(0, 0, 66))
+			.nocombine(true)
+			.build(),
+	)?;
+	api::set_hl(
+		0,
+		"@markup.link.label.markdown_inline",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(180, 74, 95))
+			.nocombine(true)
+			.build(),
+	)?;
 
 	api::set_hl(
 		0,

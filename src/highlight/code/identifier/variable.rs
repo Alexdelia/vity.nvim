@@ -26,7 +26,7 @@ pub fn load() -> Result<(), api::Error> {
 	let constant = Hsl {
 		h: 230,
 		s: 60,
-		l: 55,
+		l: 59,
 	};
 	api::set_hl(
 		0,
@@ -39,6 +39,7 @@ pub fn load() -> Result<(), api::Error> {
 	let f = follow!("Constant");
 	api::set_hl(0, "@constant", f)?;
 	api::set_hl(0, "@lsp.type.const", f)?;
+	api::set_hl(0, "@lsp.typemod.property.static", f)?;
 
 	api::set_hl(
 		0,
@@ -55,6 +56,13 @@ pub fn load() -> Result<(), api::Error> {
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(constant.h + 25, constant.s, constant.l))
 			.nocombine(true)
+			.build(),
+	)?;
+	api::set_hl(
+		0,
+		"@lsp.typemod.property.instance.dart",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(255, 80, 92))
 			.build(),
 	)?;
 

@@ -36,6 +36,7 @@ pub fn load() -> Result<(), api::Error> {
 	api::set_hl(0, "@lsp.type.macro", f)?;
 	api::set_hl(0, "@function.builtin", f)?;
 	api::set_hl(0, "@attribute.builtin.python", f)?;
+	api::set_hl(0, "@lsp.typemod.property.annotation.dart", f)?;
 
 	api::set_hl(
 		0,
@@ -43,6 +44,15 @@ pub fn load() -> Result<(), api::Error> {
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(base.h - 7, base.s, base.l))
 			.bold(true)
+			.nocombine(true)
+			.build(),
+	)?;
+
+	api::set_hl(
+		0,
+		"@lsp.type.parameter",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(0, 0, 77))
 			.nocombine(true)
 			.build(),
 	)?;

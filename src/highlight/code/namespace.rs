@@ -13,6 +13,7 @@ pub fn load() -> Result<(), api::Error> {
 	)?;
 	let f = follow!("@module");
 	api::set_hl(0, "@lsp.type.module", f)?;
+	api::set_hl(0, "@lsp.mod.importPrefix", f)?;
 
 	Ok(())
 }

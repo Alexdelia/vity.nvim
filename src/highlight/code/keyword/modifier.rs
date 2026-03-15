@@ -20,6 +20,8 @@ pub fn load() -> Result<(), api::Error> {
 			.italic(true)
 			.build(),
 	)?;
+	let f = follow!("@keyword.coroutine");
+	api::set_hl(0, "@lsp.typemod.keyword.async", f)?;
 
 	Ok(())
 }
