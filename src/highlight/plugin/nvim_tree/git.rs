@@ -10,7 +10,7 @@ const PRE: &str = f!("{PRE_BASE}Git");
 
 pub fn load() -> Result<(), api::Error> {
 	let follow_dir = follow!("Directory");
-	let follow_normal = follow!("Normal");
+	let disable = follow!("NONE");
 
 	api::set_hl(
 		0,
@@ -20,7 +20,7 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 	api::set_hl(0, f!("{PRE}FolderDirtyHL"), follow_dir)?;
-	api::set_hl(0, f!("{PRE}FileDirtyHL"), follow_normal)?;
+	api::set_hl(0, f!("{PRE}FileDirtyHL"), disable)?;
 
 	api::set_hl(
 		0,
@@ -30,7 +30,7 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 	api::set_hl(0, f!("{PRE}FolderStagedHL"), follow_dir)?;
-	api::set_hl(0, f!("{PRE}FileStagedHL"), follow_normal)?;
+	api::set_hl(0, f!("{PRE}FileStagedHL"), disable)?;
 
 	api::set_hl(
 		0,
@@ -40,11 +40,11 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 	api::set_hl(0, f!("{PRE}FolderNewHL"), follow_dir)?;
-	api::set_hl(0, f!("{PRE}FileNewHL"), follow_normal)?;
+	api::set_hl(0, f!("{PRE}FileNewHL"), disable)?;
 
 	api::set_hl(0, f!("{PRE}RenamedIcon"), follow!(f!("{PRE}StagedIcon")))?;
 	api::set_hl(0, f!("{PRE}FolderRenamedHL"), follow_dir)?;
-	api::set_hl(0, f!("{PRE}FileRenamedHL"), follow_normal)?;
+	api::set_hl(0, f!("{PRE}FileRenamedHL"), disable)?;
 
 	api::set_hl(
 		0,
@@ -54,7 +54,7 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 	api::set_hl(0, f!("{PRE}FolderDeletedHL"), follow_dir)?;
-	api::set_hl(0, f!("{PRE}FileDeletedHL"), follow_normal)?;
+	api::set_hl(0, f!("{PRE}FileDeletedHL"), disable)?;
 
 	Ok(())
 }
