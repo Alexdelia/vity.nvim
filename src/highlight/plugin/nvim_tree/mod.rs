@@ -15,7 +15,7 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		f!("{PRE}FolderIcon"),
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(201, 15, 62))
+			.foreground(&hsl(0, 0, 33))
 			.bold(true)
 			.build(),
 	)?;
