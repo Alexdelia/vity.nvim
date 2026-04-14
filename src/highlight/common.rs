@@ -11,6 +11,7 @@ pub fn load() -> Result<(), api::Error> {
 		"Directory",
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(200, 80, 50))
+			.bold(true)
 			.build(),
 	)?;
 

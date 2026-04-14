@@ -9,6 +9,9 @@ use super::PRE as PRE_BASE;
 const PRE: &str = f!("{PRE_BASE}Git");
 
 pub fn load() -> Result<(), api::Error> {
+	let follow_dir = follow!("Directory");
+	let follow_normal = follow!("Normal");
+
 	api::set_hl(
 		0,
 		f!("{PRE}DirtyIcon"),
@@ -16,16 +19,8 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(69, 70, 48))
 			.build(),
 	)?;
-	api::set_hl(
-		0,
-		f!("{PRE}FolderDirtyHL"),
-		&SetHighlightOpts::builder().italic(true).build(),
-	)?;
-	api::set_hl(
-		0,
-		f!("{PRE}FileDirtyHL"),
-		&SetHighlightOpts::builder().italic(true).build(),
-	)?;
+	api::set_hl(0, f!("{PRE}FolderDirtyHL"), follow_dir)?;
+	api::set_hl(0, f!("{PRE}FileDirtyHL"), follow_normal)?;
 
 	api::set_hl(
 		0,
@@ -34,16 +29,8 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(69, 70, 32))
 			.build(),
 	)?;
-	api::set_hl(
-		0,
-		f!("{PRE}FolderStagedHL"),
-		&SetHighlightOpts::builder().underdotted(true).build(),
-	)?;
-	api::set_hl(
-		0,
-		f!("{PRE}FileStagedHL"),
-		&SetHighlightOpts::builder().underdotted(true).build(),
-	)?;
+	api::set_hl(0, f!("{PRE}FolderStagedHL"), follow_dir)?;
+	api::set_hl(0, f!("{PRE}FileStagedHL"), follow_normal)?;
 
 	api::set_hl(
 		0,
@@ -52,28 +39,12 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(110, 50, 40))
 			.build(),
 	)?;
-	api::set_hl(
-		0,
-		f!("{PRE}FolderNewHL"),
-		&SetHighlightOpts::builder().underdashed(true).build(),
-	)?;
-	api::set_hl(
-		0,
-		f!("{PRE}FileNewHL"),
-		&SetHighlightOpts::builder().underdashed(true).build(),
-	)?;
+	api::set_hl(0, f!("{PRE}FolderNewHL"), follow_dir)?;
+	api::set_hl(0, f!("{PRE}FileNewHL"), follow_normal)?;
 
 	api::set_hl(0, f!("{PRE}RenamedIcon"), follow!(f!("{PRE}StagedIcon")))?;
-	api::set_hl(
-		0,
-		f!("{PRE}FolderRenamedHL"),
-		follow!(f!("{PRE}FolderStagedHL")),
-	)?;
-	api::set_hl(
-		0,
-		f!("{PRE}FileRenamedHL"),
-		follow!(f!("{PRE}FileStagedHL")),
-	)?;
+	api::set_hl(0, f!("{PRE}FolderRenamedHL"), follow_dir)?;
+	api::set_hl(0, f!("{PRE}FileRenamedHL"), follow_normal)?;
 
 	api::set_hl(
 		0,
@@ -82,16 +53,8 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(0, 70, 40))
 			.build(),
 	)?;
-	api::set_hl(
-		0,
-		f!("{PRE}FolderDeletedHL"),
-		&SetHighlightOpts::builder().underdashed(true).build(),
-	)?;
-	api::set_hl(
-		0,
-		f!("{PRE}FileDeletedHL"),
-		&SetHighlightOpts::builder().underdashed(true).build(),
-	)?;
+	api::set_hl(0, f!("{PRE}FolderDeletedHL"), follow_dir)?;
+	api::set_hl(0, f!("{PRE}FileDeletedHL"), follow_normal)?;
 
 	Ok(())
 }
