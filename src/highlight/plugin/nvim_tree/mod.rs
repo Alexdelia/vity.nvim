@@ -27,6 +27,14 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(108, 72, 49))
 			.build(),
 	)?;
+	api::set_hl(
+		0,
+		f!("{PRE}Symlink"),
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(190, 80, 65))
+			.build(),
+	)?;
+	api::set_hl(0, f!("{PRE}SymlinkIcon"), follow!(f!("{PRE}Symlink")))?;
 
 	Ok(())
 }
