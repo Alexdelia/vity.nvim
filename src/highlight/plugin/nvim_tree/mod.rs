@@ -20,5 +20,13 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	api::set_hl(
+		0,
+		f!("{PRE}ExecFile"),
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(108, 72, 49))
+			.build(),
+	)?;
+
 	Ok(())
 }
