@@ -8,5 +8,5 @@ name = "vity"
 crate-type = ["cdylib"]
 
 [dependencies]
-nvim-oxi = { git = "https://github.com/noib3/nvim-oxi.git", rev = "dfdfe59d9d8328452019f697292d4bd2eed95a56", features = ["neovim-0-11"] }
+nvim-oxi = { git = "https://github.com/noib3/nvim-oxi.git", rev = "7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65", features = ["neovim-0-12"] }
 const_format = "0.2.36"
