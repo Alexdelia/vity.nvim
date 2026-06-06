@@ -16,8 +16,8 @@ nvim-oxi = { git = "https://github.com/noib3/nvim-oxi.git", rev = "7ad27a7d3c8a7
 const_format = "0.2.36"
 
 [patch."https://github.com/noib3/nvim-oxi.git"]
-nvim-oxi = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
-nvim-oxi-api = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
-nvim-oxi-luajit = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
-nvim-oxi-macros = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
-nvim-oxi-types = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
+nvim-oxi = { git = "https://github.com/c-c-k/nvim-oxi.git", rev = "d2e25848831e665621d5b27f722041a1c66d8f3a" }
+nvim-oxi-api = { git = "https://github.com/c-c-k/nvim-oxi.git", rev = "d2e25848831e665621d5b27f722041a1c66d8f3a" }
+nvim-oxi-luajit = { git = "https://github.com/c-c-k/nvim-oxi.git", rev = "d2e25848831e665621d5b27f722041a1c66d8f3a" }
+nvim-oxi-macros = { git = "https://github.com/c-c-k/nvim-oxi.git", rev = "d2e25848831e665621d5b27f722041a1c66d8f3a" }
+nvim-oxi-types = { git = "https://github.com/c-c-k/nvim-oxi.git", rev = "d2e25848831e665621d5b27f722041a1c66d8f3a" }
