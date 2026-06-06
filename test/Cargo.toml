@@ -1,0 +1,14 @@
+[package]
+name = "vity-tests"
+version = "0.0.0"
+edition = "2024"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+nvim-oxi = { git = "https://github.com/noib3/nvim-oxi.git", rev = "7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65", features = ["neovim-0-12", "test"] }
+
+[build-dependencies]
+nvim-oxi = { git = "https://github.com/noib3/nvim-oxi.git", rev = "7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65", features = ["neovim-0-12", "test"] }

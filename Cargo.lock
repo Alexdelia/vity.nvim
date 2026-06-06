@@ -25,6 +25,39 @@ dependencies = [
 ]
 
 [[package]]
+name = "camino"
+version = "1.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e629a66d692cb9ff1a1c664e41771b3dcaf961985a9774c0eb0bd1b51cf60a48"
+dependencies = [
+ "serde_core",
+]
+
+[[package]]
+name = "cargo-platform"
+version = "0.3.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "dd0061da739915fae12ea00e16397555ed4371a6bb285431aab930f61b0aa4ba"
+dependencies = [
+ "serde",
+ "serde_core",
+]
+
+[[package]]
+name = "cargo_metadata"
+version = "0.23.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ef987d17b0a113becdd19d3d0022d04d7ef41f9efe4f3fb63ac44ba61df3ade9"
+dependencies = [
+ "camino",
+ "cargo-platform",
+ "semver",
+ "serde",
+ "serde_json",
+ "thiserror",
+]
+
+[[package]]
 name = "cc"
 version = "1.2.63"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -72,6 +105,12 @@ name = "find-msvc-tools"
 version = "0.1.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5baebc0774151f905a1a2cc41989300b1e6fbb29aff0ceffa1064fdd3088d582"
+
+[[package]]
+name = "itoa"
+version = "1.0.18"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8f42a60cbdf9a97f5d2305f08a87dc4e09308d1276d28c869c684d7777685682"
 
 [[package]]
 name = "konst"
@@ -161,8 +200,9 @@ dependencies = [
 [[package]]
 name = "nvim-oxi"
 version = "0.6.0"
-source = "git+https://github.com/noib3/nvim-oxi.git?rev=7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65#7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65"
+source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=f54a9d7137f75a4fcec448fa23d699c1281c4265#f54a9d7137f75a4fcec448fa23d699c1281c4265"
 dependencies = [
+ "cargo_metadata",
  "mlua",
  "nvim-oxi-api",
  "nvim-oxi-luajit",
@@ -174,7 +214,7 @@ dependencies = [
 [[package]]
 name = "nvim-oxi-api"
 version = "0.6.0"
-source = "git+https://github.com/noib3/nvim-oxi.git?rev=7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65#7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65"
+source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=f54a9d7137f75a4fcec448fa23d699c1281c4265#f54a9d7137f75a4fcec448fa23d699c1281c4265"
 dependencies = [
  "mlua",
  "nvim-oxi-luajit",
@@ -188,7 +228,7 @@ dependencies = [
 [[package]]
 name = "nvim-oxi-luajit"
 version = "0.6.0"
-source = "git+https://github.com/noib3/nvim-oxi.git?rev=7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65#7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65"
+source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=f54a9d7137f75a4fcec448fa23d699c1281c4265#f54a9d7137f75a4fcec448fa23d699c1281c4265"
 dependencies = [
  "thiserror",
 ]
@@ -196,7 +236,7 @@ dependencies = [
 [[package]]
 name = "nvim-oxi-macros"
 version = "0.6.0"
-source = "git+https://github.com/noib3/nvim-oxi.git?rev=7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65#7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65"
+source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=f54a9d7137f75a4fcec448fa23d699c1281c4265#f54a9d7137f75a4fcec448fa23d699c1281c4265"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -206,7 +246,7 @@ dependencies = [
 [[package]]
 name = "nvim-oxi-types"
 version = "0.6.0"
-source = "git+https://github.com/noib3/nvim-oxi.git?rev=7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65#7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65"
+source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=f54a9d7137f75a4fcec448fa23d699c1281c4265#f54a9d7137f75a4fcec448fa23d699c1281c4265"
 dependencies = [
  "libc",
  "nvim-oxi-luajit",
@@ -289,6 +329,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "94143f37725109f92c262ed2cf5e59bce7498c01bcc1502d7b9afe439a4e9f49"
 
 [[package]]
+name = "semver"
+version = "1.0.28"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "8a7852d02fc848982e0c167ef163aaff9cd91dc640ba85e263cb1ce46fae51cd"
+dependencies = [
+ "serde",
+ "serde_core",
+]
+
+[[package]]
 name = "serde"
 version = "1.0.228"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -316,6 +366,19 @@ dependencies = [
  "proc-macro2",
  "quote",
  "syn",
+]
+
+[[package]]
+name = "serde_json"
+version = "1.0.150"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e8014e44b4736ed0538adeecded0fce2a272f22dc9578a7eb6b2d9993c74cfb9"
+dependencies = [
+ "itoa",
+ "memchr",
+ "serde",
+ "serde_core",
+ "zmij",
 ]
 
 [[package]]
@@ -393,7 +456,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "vity-tests"
+version = "0.0.0"
+dependencies = [
+ "nvim-oxi",
+]
+
+[[package]]
 name = "windows-link"
 version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f0805222e57f7521d6a62e36fa9163bc891acd422f971defe97d64e70d0a4fe5"
+
+[[package]]
+name = "zmij"
+version = "1.0.21"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b8848ee67ecc8aedbaf3e4122217aff892639231befc6a1b58d29fff4c2cabaa"
+
+[[patch.unused]]
+name = "nvim-oxi-libuv"
+version = "0.6.0"
+source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=f54a9d7137f75a4fcec448fa23d699c1281c4265#f54a9d7137f75a4fcec448fa23d699c1281c4265"

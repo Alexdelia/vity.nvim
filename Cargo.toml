@@ -1,3 +1,7 @@
+[workspace]
+members = ["test"]
+resolver = "2"
+
 [package]
 name = "vity-nvim"
 version = "0.1.0"
@@ -10,3 +14,11 @@ crate-type = ["cdylib"]
 [dependencies]
 nvim-oxi = { git = "https://github.com/noib3/nvim-oxi.git", rev = "7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65", features = ["neovim-0-12"] }
 const_format = "0.2.36"
+
+[patch."https://github.com/noib3/nvim-oxi.git"]
+nvim-oxi = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
+nvim-oxi-api = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
+nvim-oxi-libuv = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
+nvim-oxi-luajit = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
+nvim-oxi-macros = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
+nvim-oxi-types = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
