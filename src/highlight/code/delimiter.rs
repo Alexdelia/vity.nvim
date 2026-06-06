@@ -12,6 +12,7 @@ pub fn load() -> Result<(), api::Error> {
 	)?;
 	let f = follow!("Delimiter");
 	api::set_hl(0, "@tag.delimiter", f)?;
+	api::set_hl(0, "rustFoldBraces", f)?;
 
 	api::set_hl(
 		0,
