@@ -200,7 +200,7 @@ dependencies = [
 [[package]]
 name = "nvim-oxi"
 version = "0.6.0"
-source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=dd2d1a5d7d11364d536cf318215b4cba5b686747#dd2d1a5d7d11364d536cf318215b4cba5b686747"
+source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=4b14b9eab0d150c27a0b27c408caeb0fd5cbb4cd#4b14b9eab0d150c27a0b27c408caeb0fd5cbb4cd"
 dependencies = [
  "cargo_metadata",
  "mlua",
@@ -214,7 +214,7 @@ dependencies = [
 [[package]]
 name = "nvim-oxi-api"
 version = "0.6.0"
-source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=dd2d1a5d7d11364d536cf318215b4cba5b686747#dd2d1a5d7d11364d536cf318215b4cba5b686747"
+source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=4b14b9eab0d150c27a0b27c408caeb0fd5cbb4cd#4b14b9eab0d150c27a0b27c408caeb0fd5cbb4cd"
 dependencies = [
  "mlua",
  "nvim-oxi-luajit",
@@ -228,7 +228,7 @@ dependencies = [
 [[package]]
 name = "nvim-oxi-luajit"
 version = "0.6.0"
-source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=dd2d1a5d7d11364d536cf318215b4cba5b686747#dd2d1a5d7d11364d536cf318215b4cba5b686747"
+source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=4b14b9eab0d150c27a0b27c408caeb0fd5cbb4cd#4b14b9eab0d150c27a0b27c408caeb0fd5cbb4cd"
 dependencies = [
  "thiserror",
 ]
@@ -236,7 +236,7 @@ dependencies = [
 [[package]]
 name = "nvim-oxi-macros"
 version = "0.6.0"
-source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=dd2d1a5d7d11364d536cf318215b4cba5b686747#dd2d1a5d7d11364d536cf318215b4cba5b686747"
+source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=4b14b9eab0d150c27a0b27c408caeb0fd5cbb4cd#4b14b9eab0d150c27a0b27c408caeb0fd5cbb4cd"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -246,7 +246,7 @@ dependencies = [
 [[package]]
 name = "nvim-oxi-types"
 version = "0.6.0"
-source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=dd2d1a5d7d11364d536cf318215b4cba5b686747#dd2d1a5d7d11364d536cf318215b4cba5b686747"
+source = "git+https://github.com/Alexdelia/nvim-oxi.git?rev=4b14b9eab0d150c27a0b27c408caeb0fd5cbb4cd#4b14b9eab0d150c27a0b27c408caeb0fd5cbb4cd"
 dependencies = [
  "libc",
  "nvim-oxi-luajit",
