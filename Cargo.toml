@@ -18,7 +18,6 @@ const_format = "0.2.36"
 [patch."https://github.com/noib3/nvim-oxi.git"]
 nvim-oxi = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
 nvim-oxi-api = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
-nvim-oxi-libuv = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
 nvim-oxi-luajit = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
 nvim-oxi-macros = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }
 nvim-oxi-types = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "f54a9d7137f75a4fcec448fa23d699c1281c4265" }

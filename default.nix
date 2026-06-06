@@ -19,7 +19,7 @@ in
       lockFile = ./Cargo.lock;
 
       outputHashes = {
-        "nvim-oxi-0.6.0" = "sha256-5SyMiDUT4b+WCdhUEKgGdJjCABz69Lur4V1lEP0F6UM=";
+        "nvim-oxi-0.6.0" = "sha256-zwXbsR6HgRH/mKx3Tn2f+ChNBlHWOkvjCGhaAJ/HjIk=";
       };
     };
 
