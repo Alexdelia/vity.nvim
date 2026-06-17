@@ -19,6 +19,14 @@ pub fn load() -> Result<(), api::Error> {
 			.bold(true)
 			.build(),
 	)?;
+	api::set_hl(
+		0,
+		"{PRE}RootFolder",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(265, 75, 72))
+			.bold(true)
+			.build(),
+	)?;
 
 	api::set_hl(
 		0,
