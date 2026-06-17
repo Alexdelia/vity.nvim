@@ -21,7 +21,7 @@ pub fn load() -> Result<(), api::Error> {
 	)?;
 	api::set_hl(
 		0,
-		"{PRE}RootFolder",
+		f!("{PRE}RootFolder"),
 		&SetHighlightOpts::builder()
 			.foreground(&hsl(265, 75, 72))
 			.bold(true)
