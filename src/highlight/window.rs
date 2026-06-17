@@ -36,6 +36,13 @@ pub fn load() -> Result<(), api::Error> {
 	)?;
 	api::set_hl(
 		0,
+		"PmenuBorder",
+		&SetHighlightOpts::builder()
+			.background(&BACKGROUND_D1.to_rgb())
+			.build(),
+	)?;
+	api::set_hl(
+		0,
 		"StatusLine",
 		&SetHighlightOpts::builder()
 			.background(&BACKGROUND.to_rgb())
