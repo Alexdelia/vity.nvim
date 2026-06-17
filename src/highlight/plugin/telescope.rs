@@ -34,5 +34,13 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
+	api::set_hl(
+		0,
+		f!("{PRE}PromptCounter"),
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(0, 0, 50))
+			.build(),
+	)?;
+
 	Ok(())
 }
