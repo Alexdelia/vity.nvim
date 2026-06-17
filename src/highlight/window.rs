@@ -29,18 +29,20 @@ pub fn load() -> Result<(), api::Error> {
 
 	api::set_hl(
 		0,
+		"WinSeparator",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(0, 0, 20))
+			.build(),
+	)?;
+
+	api::set_hl(
+		0,
 		"Pmenu",
 		&SetHighlightOpts::builder()
 			.background(&BACKGROUND_D1.to_rgb())
 			.build(),
 	)?;
-	api::set_hl(
-		0,
-		"PmenuBorder",
-		&SetHighlightOpts::builder()
-			.background(&BACKGROUND_D1.to_rgb())
-			.build(),
-	)?;
+	api::set_hl(0, "PmenuBorder", follow!("WinSeparator"))?;
 	api::set_hl(
 		0,
 		"StatusLine",

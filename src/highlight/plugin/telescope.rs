@@ -26,13 +26,7 @@ pub fn load() -> Result<(), api::Error> {
 			.build(),
 	)?;
 
-	api::set_hl(
-		0,
-		f!("{PRE}Border"),
-		&SetHighlightOpts::builder()
-			.foreground(&hsl(0, 0, 50))
-			.build(),
-	)?;
+	api::set_hl(0, f!("{PRE}Border"), follow!("WinSeparator"))?;
 
 	api::set_hl(
 		0,
