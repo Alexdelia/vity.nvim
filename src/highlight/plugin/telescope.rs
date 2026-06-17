@@ -30,7 +30,7 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		f!("{PRE}Border"),
 		&SetHighlightOpts::builder()
-			.background(&BACKGROUND_U2.to_rgb())
+			.foreground(&hsl(0, 0, 50))
 			.build(),
 	)?;
 
