@@ -44,5 +44,11 @@ pub fn load() -> Result<(), api::Error> {
 	)?;
 	api::set_hl(0, f!("{PRE}SymlinkIcon"), follow!(f!("{PRE}Symlink")))?;
 
+	api::set_hl(
+		0,
+		f!("{PRE}NormalFloat"),
+		&SetHighlightOpts::builder().build(),
+	)?;
+
 	Ok(())
 }
