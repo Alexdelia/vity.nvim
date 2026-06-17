@@ -6,6 +6,8 @@ pub const BACKGROUND: Hsl = Hsl { h: 0, s: 0, l: 12 };
 pub const BACKGROUND_D1: Hsl = Hsl { h: 0, s: 0, l: 10 };
 // pub const BACKGROUND_D2: Hsl = Hsl { h: 0, s: 0, l: 8 };
 
+pub const SELECTION: Hsl = Hsl { h: 0, s: 0, l: 22 };
+
 /*
 pub const PRIMARY: Hsl = Hsl {
 	h: 260,

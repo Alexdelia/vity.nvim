@@ -2,7 +2,7 @@ use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
 use const_format::formatcp as f;
 
-use crate::hsl;
+use crate::{color::SELECTION, hsl};
 
 const PRE: &str = "Telescope";
 
@@ -12,6 +12,14 @@ pub fn load() -> Result<(), api::Error> {
 		f!("{PRE}Matching"),
 		&SetHighlightOpts::builder()
 			.background(&hsl(0, 25, 25))
+			.build(),
+	)?;
+
+	api::set_hl(
+		0,
+		f!("{PRE}Selection"),
+		&SetHighlightOpts::builder()
+			.background(&SELECTION.to_rgb())
 			.build(),
 	)?;
 
