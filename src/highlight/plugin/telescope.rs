@@ -2,10 +2,7 @@ use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
 use const_format::formatcp as f;
 
-use crate::{
-	color::{BACKGROUND_U2, SELECTION},
-	hsl,
-};
+use crate::{color::SELECTION, hsl};
 
 const PRE: &str = "Telescope";
 
