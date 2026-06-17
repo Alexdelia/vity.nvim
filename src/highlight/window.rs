@@ -1,6 +1,6 @@
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
-use crate::color::{BACKGROUND, BACKGROUND_D1, BACKGROUND_U2};
+use crate::color::{BACKGROUND, BACKGROUND_D1, BACKGROUND_U2, SELECTION};
 use crate::hsl;
 
 pub fn load() -> Result<(), api::Error> {
@@ -57,6 +57,14 @@ pub fn load() -> Result<(), api::Error> {
 		&SetHighlightOpts::builder()
 			.background(&BACKGROUND.to_rgb())
 			.foreground(&hsl(0, 0, 50))
+			.build(),
+	)?;
+
+	api::set_hl(
+		0,
+		"Selection",
+		&SetHighlightOpts::builder()
+			.background(&SELECTION.to_rgb())
 			.build(),
 	)?;
 
