@@ -11,8 +11,7 @@ pub fn load() -> Result<(), api::Error> {
 		0,
 		f!("{PRE}Matching"),
 		&SetHighlightOpts::builder()
-			.foreground(&hsl(0, 66, 50))
-			.bold(true)
+			.background(&hsl(0, 25, 25))
 			.build(),
 	)?;
 
