@@ -12,3 +12,6 @@ nvim-oxi = { git = "https://github.com/noib3/nvim-oxi.git", rev = "7ad27a7d3c8a7
 
 [build-dependencies]
 nvim-oxi = { git = "https://github.com/noib3/nvim-oxi.git", rev = "7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65", features = ["neovim-0-12", "test"] }
+
+[lints]
+workspace = true

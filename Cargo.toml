@@ -2,6 +2,24 @@
 members = ["test"]
 resolver = "2"
 
+[workspace.lints.rust]
+unreachable_pub = "deny"
+
+[workspace.lints.clippy]
+unwrap_used = "deny"
+expect_used = "deny"
+panic = "deny"
+suspicious = { level = "deny", priority = -1 }
+complexity = { level = "deny", priority = -1 }
+style = { level = "deny", priority = -1 }
+perf = { level = "deny", priority = -1 }
+pedantic = { level = "deny", priority = -1 }
+nursery = { level = "deny", priority = -1 }
+missing_errors_doc = "allow"
+missing_panics_doc = "allow"
+redundant_pub_crate = "allow"
+future_not_send = "allow"
+
 [package]
 name = "vity-nvim"
 version = "0.1.0"
@@ -14,6 +32,9 @@ crate-type = ["cdylib"]
 [dependencies]
 nvim-oxi = { git = "https://github.com/noib3/nvim-oxi.git", rev = "7ad27a7d3c8a72c34e7b9914eb77fb0644ff3f65", features = ["neovim-0-12"] }
 const_format = "0.2.36"
+
+[lints]
+workspace = true
 
 [patch."https://github.com/noib3/nvim-oxi.git"]
 nvim-oxi = { git = "https://github.com/Alexdelia/nvim-oxi.git", rev = "e183de149fc6d5105c0b2cc3422baf6eaba2c5c9" }
