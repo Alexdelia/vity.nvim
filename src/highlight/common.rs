@@ -5,7 +5,7 @@ use crate::{
 	hsl::{Hsl, convert::to_rgb::hsl},
 };
 
-pub fn load() -> Result<(), api::Error> {
+pub(super) fn load() -> Result<(), api::Error> {
 	api::set_hl(
 		0,
 		"Directory",

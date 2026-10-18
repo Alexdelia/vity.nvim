@@ -2,7 +2,7 @@ use crate::hsl;
 
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
-pub fn load() -> Result<(), api::Error> {
+pub(super) fn load() -> Result<(), api::Error> {
 	let hue = 210;
 
 	api::set_hl(

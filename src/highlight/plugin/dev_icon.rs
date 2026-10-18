@@ -4,7 +4,7 @@ use const_format::formatcp as f;
 
 const PRE: &str = "DevIcon";
 
-pub fn load() -> Result<(), api::Error> {
+pub(super) fn load() -> Result<(), api::Error> {
 	api::set_hl(
 		0,
 		f!("{PRE}Sh"),

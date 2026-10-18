@@ -1,5 +1,5 @@
 // mod blend;
-pub mod convert;
+pub(crate) mod convert;
 
 type Float = f64;
 
@@ -8,7 +8,7 @@ type Sat = u8;
 type Lum = u8;
 
 #[cfg_attr(test, derive(Debug, PartialEq))]
-pub struct Hsl {
+pub(crate) struct Hsl {
 	pub h: Hue,
 	pub s: Sat,
 	pub l: Lum,
@@ -21,7 +21,7 @@ impl Hsl {
 	}
 	*/
 
-	pub fn to_rgb(&self) -> String {
+	pub(crate) fn to_rgb(&self) -> String {
 		convert::to_rgb::hsl(self.h, self.s, self.l)
 	}
 

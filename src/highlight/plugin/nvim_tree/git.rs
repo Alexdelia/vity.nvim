@@ -8,7 +8,7 @@ use super::PRE as PRE_BASE;
 
 const PRE: &str = f!("{PRE_BASE}Git");
 
-pub fn load() -> Result<(), api::Error> {
+pub(super) fn load() -> Result<(), api::Error> {
 	let follow_dir = follow!("Directory");
 	let disable = follow!("NONE");
 

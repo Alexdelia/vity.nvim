@@ -2,7 +2,7 @@ use crate::{Hsl, color::BACKGROUND_U2, hsl};
 
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
-pub fn load() -> Result<(), api::Error> {
+pub(super) fn load() -> Result<(), api::Error> {
 	let base = Hsl {
 		h: 95,
 		s: 48,
@@ -93,6 +93,21 @@ pub fn load() -> Result<(), api::Error> {
 	api::set_hl(0, "@string.special.path", &path)?;
 	api::set_hl(0, "@lsp.type.path", &path)?;
 
+	load_markdown_link()?;
+
+	api::set_hl(
+		0,
+		"@character.special",
+		&SetHighlightOpts::builder()
+			.foreground(&hsl(280, 40, 50))
+			.nocombine(true)
+			.build(),
+	)?;
+
+	Ok(())
+}
+
+fn load_markdown_link() -> Result<(), api::Error> {
 	api::set_hl(
 		0,
 		"@markup.link.url.markdown_inline",
@@ -117,16 +132,5 @@ pub fn load() -> Result<(), api::Error> {
 			.foreground(&hsl(180, 74, 95))
 			.nocombine(true)
 			.build(),
-	)?;
-
-	api::set_hl(
-		0,
-		"@character.special",
-		&SetHighlightOpts::builder()
-			.foreground(&hsl(280, 40, 50))
-			.nocombine(true)
-			.build(),
-	)?;
-
-	Ok(())
+	)
 }

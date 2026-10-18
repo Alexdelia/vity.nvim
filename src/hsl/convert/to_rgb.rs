@@ -9,10 +9,14 @@ use crate::hsl::{Float, Hue, Lum, Sat};
 ///
 /// # Returns
 /// * a hex color string (e.g. "#ff0000").
-pub fn hsl(h: Hue, s: Sat, l: Lum) -> String {
-	let (r, g, b) = hsl_to_rgb(h as Float / 360.0, s as Float / 100.0, l as Float / 100.0);
+pub(crate) fn hsl(hue: Hue, sat: Sat, lum: Lum) -> String {
+	let (red, green, blue) = hsl_to_rgb(
+		Float::from(hue) / 360.0,
+		Float::from(sat) / 100.0,
+		Float::from(lum) / 100.0,
+	);
 
-	format!("#{r:02x}{g:02x}{b:02x}")
+	format!("#{red:02x}{green:02x}{blue:02x}")
 }
 
 /// converts HSL to RGB.
@@ -24,23 +28,28 @@ pub fn hsl(h: Hue, s: Sat, l: Lum) -> String {
 ///
 /// # Returns
 /// * a tuple containing the RGB values as u8 (0..=255).
-pub fn hsl_to_rgb(h: Float, s: Float, l: Float) -> (u8, u8, u8) {
-	let q = if l < 0.5 {
-		l * (1.0 + s)
+pub(crate) fn hsl_to_rgb(hue: Float, sat: Float, lum: Float) -> (u8, u8, u8) {
+	let q = if lum < 0.5 {
+		lum * (1.0 + sat)
 	} else {
-		l + s - l * s
+		lum.mul_add(-sat, lum + sat)
 	};
-	let p = 2.0 * l - q;
-
-	let r = hue_to_rgb(p, q, h + 1.0 / 3.0);
-	let g = hue_to_rgb(p, q, h);
-	let b = hue_to_rgb(p, q, h - 1.0 / 3.0);
+	let p = lum.mul_add(2.0, -q);
 
 	(
-		(r * 255.0).round() as u8,
-		(g * 255.0).round() as u8,
-		(b * 255.0).round() as u8,
+		to_channel(hue_to_rgb(p, q, hue + 1.0 / 3.0)),
+		to_channel(hue_to_rgb(p, q, hue)),
+		to_channel(hue_to_rgb(p, q, hue - 1.0 / 3.0)),
 	)
+}
+
+#[expect(
+	clippy::cast_possible_truncation,
+	clippy::cast_sign_loss,
+	reason = "value is clamped to 0..=255"
+)]
+fn to_channel(ratio: Float) -> u8 {
+	(ratio * 255.0).round().clamp(0.0, 255.0) as u8
 }
 
 fn hue_to_rgb(p: Float, q: Float, t: Float) -> Float {
@@ -53,11 +62,11 @@ fn hue_to_rgb(p: Float, q: Float, t: Float) -> Float {
 	};
 
 	if t < 1.0 / 6.0 {
-		p + (q - p) * 6.0 * t
+		((q - p) * 6.0).mul_add(t, p)
 	} else if t < 1.0 / 2.0 {
 		q
 	} else if t < 2.0 / 3.0 {
-		p + (q - p) * (2.0 / 3.0 - t) * 6.0
+		((q - p) * (2.0 / 3.0 - t)).mul_add(6.0, p)
 	} else {
 		p
 	}

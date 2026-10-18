@@ -6,7 +6,7 @@ mod window;
 
 use nvim_oxi::api;
 
-pub fn load() -> Result<(), api::Error> {
+pub(crate) fn load() -> Result<(), api::Error> {
 	common::load()?;
 	code::load()?;
 	window::load()?;

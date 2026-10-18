@@ -2,7 +2,7 @@ use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
 const PRE: &str = "CmpItem";
 
-pub fn load() -> Result<(), api::Error> {
+pub(super) fn load() -> Result<(), api::Error> {
 	for (kind, link) in [
 		("Text", "Normal"),
 		("Function", "Function"),

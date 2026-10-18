@@ -8,7 +8,12 @@ use crate::{
 const PRE: &str = "Diagnostic";
 const VIRTUAL: &str = "Virtual";
 
-pub fn load() -> Result<(), api::Error> {
+const FOREGROUND_SAT: u8 = 95;
+const FOREGROUND_LUM: u8 = 60;
+const BACKGROUND_SAT: u8 = 25;
+const BACKGROUND_LUM: u8 = 17;
+
+pub(super) fn load() -> Result<(), api::Error> {
 	for (name, color) in &[
 		("Error", ERROR),
 		("Warning", WARNING),
@@ -27,47 +32,41 @@ pub fn load() -> Result<(), api::Error> {
 		)?;
 	}
 
-	let base_fg_sat = 95;
-	let base_fg_lum = 60;
-
-	let base_bg_sat = 25;
-	let base_bg_lum = 17;
-
 	for (name, color_fg, color_bg) in &[
 		(
 			"Error",
-			hsl(0, base_fg_sat, base_fg_lum + 5),
-			hsl(0, base_bg_sat - 9, base_bg_lum + 1),
+			hsl(0, FOREGROUND_SAT, FOREGROUND_LUM + 5),
+			hsl(0, BACKGROUND_SAT - 9, BACKGROUND_LUM + 1),
 		),
 		(
 			"Warning",
-			hsl(30, base_fg_sat, base_fg_lum),
-			hsl(30, base_bg_sat, base_bg_lum),
+			hsl(30, FOREGROUND_SAT, FOREGROUND_LUM),
+			hsl(30, BACKGROUND_SAT, BACKGROUND_LUM),
 		),
 		(
 			"Warn",
-			hsl(30, base_fg_sat, base_fg_lum),
-			hsl(30, base_bg_sat, base_bg_lum),
+			hsl(30, FOREGROUND_SAT, FOREGROUND_LUM),
+			hsl(30, BACKGROUND_SAT, BACKGROUND_LUM),
 		),
 		(
 			"Info",
-			hsl(INFO.h, base_fg_sat, base_fg_lum),
-			hsl(INFO.h, base_bg_sat, base_bg_lum),
+			hsl(INFO.h, FOREGROUND_SAT, FOREGROUND_LUM),
+			hsl(INFO.h, BACKGROUND_SAT, BACKGROUND_LUM),
 		),
 		(
 			"Hint",
-			hsl(HELP.h, base_fg_sat, base_fg_lum),
-			hsl(HELP.h, base_bg_sat, base_bg_lum),
+			hsl(HELP.h, FOREGROUND_SAT, FOREGROUND_LUM),
+			hsl(HELP.h, BACKGROUND_SAT, BACKGROUND_LUM),
 		),
 		(
 			"Success",
-			hsl(SUCCESS.h, base_fg_sat, base_fg_lum),
-			hsl(SUCCESS.h, base_bg_sat, base_bg_lum),
+			hsl(SUCCESS.h, FOREGROUND_SAT, FOREGROUND_LUM),
+			hsl(SUCCESS.h, BACKGROUND_SAT, BACKGROUND_LUM),
 		),
 		(
 			"Ok",
-			hsl(SUCCESS.h, base_fg_sat, base_fg_lum),
-			hsl(SUCCESS.h, base_bg_sat, base_bg_lum),
+			hsl(SUCCESS.h, FOREGROUND_SAT, FOREGROUND_LUM),
+			hsl(SUCCESS.h, BACKGROUND_SAT, BACKGROUND_LUM),
 		),
 	] {
 		let hl = format!("{PRE}{VIRTUAL}Text{name}");

@@ -2,7 +2,7 @@ use crate::hsl;
 
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
-pub fn load() -> Result<(), api::Error> {
+pub(super) fn load() -> Result<(), api::Error> {
 	// operator should have multiple highlight group
 	// - assignment (green)
 	// - arithmetic (red/pink)

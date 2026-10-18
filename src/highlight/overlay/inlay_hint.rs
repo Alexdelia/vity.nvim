@@ -2,7 +2,7 @@ use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
 use crate::hsl::convert::to_rgb::hsl;
 
-pub fn load() -> Result<(), api::Error> {
+pub(super) fn load() -> Result<(), api::Error> {
 	api::set_hl(
 		0,
 		"LspInlayHint",

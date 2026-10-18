@@ -8,7 +8,7 @@ use crate::hsl;
 
 const PRE: &str = "NvimTree";
 
-pub fn load() -> Result<(), api::Error> {
+pub(super) fn load() -> Result<(), api::Error> {
 	git::load()?;
 
 	api::set_hl(

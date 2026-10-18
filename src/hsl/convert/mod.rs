@@ -1,2 +1,2 @@
 // pub mod from_rgb;
-pub mod to_rgb;
+pub(crate) mod to_rgb;

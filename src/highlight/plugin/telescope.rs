@@ -6,7 +6,7 @@ use crate::{color::SELECTION, hsl};
 
 const PRE: &str = "Telescope";
 
-pub fn load() -> Result<(), api::Error> {
+pub(super) fn load() -> Result<(), api::Error> {
 	api::set_hl(
 		0,
 		f!("{PRE}Matching"),

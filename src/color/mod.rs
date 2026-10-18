@@ -1,12 +1,12 @@
 use crate::Hsl;
 
-pub const BACKGROUND_U2: Hsl = Hsl { h: 0, s: 0, l: 16 };
+pub(crate) const BACKGROUND_U2: Hsl = Hsl { h: 0, s: 0, l: 16 };
 // pub const BACKGROUND_U1: Hsl = Hsl { h: 0, s: 0, l: 14 };
-pub const BACKGROUND: Hsl = Hsl { h: 0, s: 0, l: 12 };
-pub const BACKGROUND_D1: Hsl = Hsl { h: 0, s: 0, l: 10 };
+pub(crate) const BACKGROUND: Hsl = Hsl { h: 0, s: 0, l: 12 };
+pub(crate) const BACKGROUND_D1: Hsl = Hsl { h: 0, s: 0, l: 10 };
 // pub const BACKGROUND_D2: Hsl = Hsl { h: 0, s: 0, l: 8 };
 
-pub const SELECTION: Hsl = Hsl { h: 0, s: 0, l: 22 };
+pub(crate) const SELECTION: Hsl = Hsl { h: 0, s: 0, l: 22 };
 
 /*
 pub const PRIMARY: Hsl = Hsl {
@@ -21,23 +21,23 @@ pub const SECONDARY_HUE: Hsl = Hsl {
 };
 */
 
-pub const ERROR: Hsl = Hsl { h: 0, s: 95, l: 65 };
-pub const WARNING: Hsl = Hsl {
+pub(crate) const ERROR: Hsl = Hsl { h: 0, s: 95, l: 65 };
+pub(crate) const WARNING: Hsl = Hsl {
 	h: 30,
 	s: 95,
 	l: 60,
 };
-pub const SUCCESS: Hsl = Hsl {
+pub(crate) const SUCCESS: Hsl = Hsl {
 	h: 120,
 	s: 65,
 	l: 50,
 };
-pub const INFO: Hsl = Hsl {
+pub(crate) const INFO: Hsl = Hsl {
 	h: 205,
 	s: 65,
 	l: 50,
 };
-pub const HELP: Hsl = Hsl {
+pub(crate) const HELP: Hsl = Hsl {
 	h: 180,
 	s: 65,
 	l: 50,

@@ -6,7 +6,7 @@ mod telescope;
 
 use nvim_oxi::api;
 
-pub fn load() -> Result<(), api::Error> {
+pub(super) fn load() -> Result<(), api::Error> {
 	dev_icon::load()?;
 	telescope::load()?;
 	cmp::load()?;

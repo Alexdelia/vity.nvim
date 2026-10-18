@@ -2,7 +2,7 @@ use crate::{Hsl, hsl};
 
 use nvim_oxi::api::{self, opts::SetHighlightOpts};
 
-pub fn load() -> Result<(), api::Error> {
+pub(super) fn load() -> Result<(), api::Error> {
 	let var = Hsl {
 		h: 180,
 		s: 74,
